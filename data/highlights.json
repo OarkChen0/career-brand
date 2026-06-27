@@ -2,8 +2,8 @@
   "items": [
     { "value": "10+", "label": { "zh": "年實務經驗", "en": "Years Experience" }, "source": "computed" },
     { "value": "25+", "label": { "zh": "商業專案", "en": "Commercial Projects" }, "source": "manual", "note": "含 in-house、上架、接案與 side project" },
-    { "value": "7", "label": { "zh": "人團隊帶領（峰值）", "en": "Engineers Led (peak)" }, "source": "manual", "projectId": "shin-kong-security" },
-    { "value": "4–6", "label": { "zh": "人現職團隊", "en": "Current Team Size" }, "source": "manual", "note": "英濟" }
+    { "value": "7", "label": { "zh": "人團隊帶領（峰值）", "en": "Engineers Led (peak)" }, "source": "manual", "projectId": "dynamic-form-enterprise" },
+    { "value": "4–6", "label": { "zh": "人現職團隊", "en": "Current Team Size" }, "source": "manual", "note": "Megaforce (MegAi)" }
   ],
   "domains": [
     { "zh": "Healthcare", "en": "Healthcare" },

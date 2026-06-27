@@ -5,7 +5,7 @@
   "featured": true,
   "status": "discontinued",
   "domains": ["fintech", "blockchain", "mobile", "backend"],
-  "employer": { "name": { "zh": "赫斯全球", "en": "Hess Global" }, "showClientName": true },
+  "employer": { "name": { "zh": "赫斯全球", "en": "Hearts Worldwide Co., Ltd." }, "showClientName": true },
   "problem": {
     "zh": "加密貨幣錢包、OTC 交易、GameFi 需快速迭代並因應商店政策變化。",
     "en": "Crypto wallets, OTC, and GameFi needed fast iteration amid changing store policies."
@@ -43,7 +43,7 @@
     }
   ],
   "note": {
-    "zh": "部分 App 已因平台政策下架；經驗侧重架構、交付與政策應對。",
-    "en": "Some apps delisted due to store policies; experience focuses on architecture and delivery."
+    "zh": "此階段所有 App 現均已因平台政策或營運因素下架；經驗侧重架構、交付與政策應對。",
+    "en": "All apps from this period are now delisted due to store policies or business reasons; experience focuses on architecture and delivery."
   }
 }

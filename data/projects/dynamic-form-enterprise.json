@@ -1,0 +1,46 @@
+{
+  "id": "dynamic-form-enterprise",
+  "name": { "zh": "Dynamic Form Engine（企業 in-house）", "en": "Dynamic Form Engine (Enterprise In-house)" },
+  "type": "work",
+  "featured": true,
+  "status": "completed",
+  "domains": ["enterprise", "mobile", "architecture"],
+  "employer": { "zh": "昕力資訊", "en": "ThinkPower Information", "showClientName": false },
+  "confidentiality": "public_anonymized",
+  "problem": {
+    "zh": "多家企業 in-house App 需依場域動態調整表單欄位，逐案重寫成本高。",
+    "en": "Multiple enterprise in-house apps needed dynamic forms without per-client rebuilds."
+  },
+  "solution": {
+    "zh": "以 MVVM 設計 JSON 驅動表單引擎；涵蓋保全、航空、健檢、電信等場域（不公開客戶與 App 名稱）。",
+    "en": "MVVM JSON-driven form engine for security, aviation, health checkup, telecom in-house apps (client names not disclosed)."
+  },
+  "responsibilities": {
+    "zh": ["SA 需求釐清", "SD 架構設計", "動態表單實作", "團隊帶領（峰值 7 人）", "客戶端 Xamarin 技術教育"],
+    "en": ["Requirements analysis", "Architecture design", "Dynamic form implementation", "Team lead (up to 7)", "Client-side Xamarin training"]
+  },
+  "technologies": ["Xamarin", "iOS", "Android", "MVVM", "SQLite"],
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "某保全業 in-house App：MVVM 動態表單架構，帶領 7 人、6 個月",
+        "en": "Security industry in-house app: MVVM dynamic forms, led 7 engineers, 6 months"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "某航空業 in-house 工單 App：動態表單 + 至客戶端 Xamarin iOS 授課 5 天",
+        "en": "Aviation in-house work-order app + 5-day Xamarin iOS client training"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "某健檢／電信／金融等 in-house 專案：動態表單、硬體串接、PM/SA 角色",
+        "en": "Health, telecom, banking in-house projects: dynamic forms, hardware integration, PM/SA roles"
+      }
+    }
+  ]
+}

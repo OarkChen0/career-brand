@@ -87,6 +87,8 @@ Portfolio 靜態站建置完成後，可部署至：
 
 > 職涯 portfolio 是 **純靜態 HTML**，任一靜態 hosting 皆可；**不必** 為此另開 Firebase 專案，除非你想全部集中在 Google 生態。
 
+**從零開始教學：** 見 [docs/github-pages-setup.md](docs/github-pages-setup.md)（含 GitHub Actions 自動部署步驟）。
+
 ## 與 Downloads/resume 的關係
 
 `~/Downloads/resume/` 為早期手動版（含活潑雙欄等）。  

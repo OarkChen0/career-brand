@@ -2,6 +2,8 @@
   {
     "name": "Red Hat Certified Engineer (RHCE)",
     "issuer": "Red Hat",
-    "year": null
+    "year": "~2016",
+    "showInResume": false,
+    "note": "約十年前考取，證照已逾期；Linux 基礎仍具參考價值，公開履歷不列"
   }
 ]

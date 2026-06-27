@@ -5,7 +5,11 @@
   "featured": true,
   "status": "in_progress",
   "domains": ["healthcare", "saas", "ai"],
-  "employer": { "name": { "zh": "英濟", "en": "E Ink" }, "showClientName": true },
+  "employer": {
+    "name": { "zh": "Megaforce（MegAi）", "en": "Megaforce (MegAi)" },
+    "website": "http://www.megaforce.com.tw",
+    "showClientName": true
+  },
   "problem": {
     "zh": "寵物醫療需支援連鎖經營的多層組織與後續中控、獸醫端產品。",
     "en": "Pet healthcare needed multi-tier franchise architecture and future admin/vet products."

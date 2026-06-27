@@ -1,0 +1,34 @@
+{
+  "id": "dynamic-form-freelance",
+  "name": { "zh": "Dynamic Form Engine（接案）", "en": "Dynamic Form Engine (Freelance)" },
+  "type": "freelance",
+  "featured": false,
+  "status": "completed",
+  "domains": ["enterprise", "mobile", "architecture"],
+  "employer": { "zh": "業餘接案", "en": "Freelance", "showClientName": false },
+  "problem": {
+    "zh": "不同委託方需依地區或場域使用不同表單內容，且欄位需可動態增刪。",
+    "en": "Freelance clients needed region-specific forms with runtime add/remove fields."
+  },
+  "solution": {
+    "zh": "沿用 MVVM 表單引擎，以 JSON 驅動樣式與 API 上傳格式（路燈巡檢、道路工程類 App）。",
+    "en": "Reused MVVM form engine with JSON-driven layout and API payloads (inspection / civil field apps)."
+  },
+  "technologies": ["iOS", "Android", "MVVM"],
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "路燈（Light）：多地區 JSON 表單自動調整",
+        "en": "Light: multi-region JSON-driven forms"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "高公局（Freeway）：動態新增／刪除欄位與上傳格式連動",
+        "en": "Freeway: dynamic add/remove fields with upload sync"
+      }
+    }
+  ]
+}

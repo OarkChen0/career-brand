@@ -3,16 +3,20 @@
   "name": { "zh": "Cares 2.0", "en": "Cares 2.0" },
   "type": "work",
   "featured": true,
-  "status": "in_progress",
+  "status": "discontinued",
   "domains": ["healthcare", "ai", "mobile"],
-  "employer": { "name": { "zh": "英濟", "en": "E Ink" }, "showClientName": true },
+  "employer": {
+    "name": { "zh": "Megaforce（MegAi）", "en": "Megaforce (MegAi)" },
+    "website": "http://www.megaforce.com.tw",
+    "showClientName": true
+  },
   "problem": {
     "zh": "健康數據平台需在長時間區間查詢時維持效能，並處理資安風險。",
     "en": "Health data platform needed performant long-range queries and security remediation."
   },
   "solution": {
-    "zh": "設計健康數據摘要資料模型，協助重構並改善資安；Flutter App 開發維護。",
-    "en": "Designed health data summary model, led refactoring and security fixes; Flutter app development."
+    "zh": "設計健康數據摘要資料模型，協助重構並改善資安；Flutter App 開發維護。專案已結束。",
+    "en": "Designed health data summary model, led refactoring and security fixes; Flutter app delivery. Project concluded."
   },
   "responsibilities": {
     "zh": ["資料模型設計", "App 開發維護", "資安議題處理", "重構協作"],

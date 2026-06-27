@@ -57,6 +57,31 @@ function statusVerb(status, lang) {
   return map[status]?.[lang] ?? status;
 }
 
+function visibleCertificates(certificates) {
+  return certificates.filter((c) => c.showInResume !== false);
+}
+
+function companyLabel(company, lang) {
+  const name = t(company, lang);
+  if (company.website) return `${name} (${company.website})`;
+  return name;
+}
+
+function renderProjectBlock(p, lang, { includeProblem = true } = {}) {
+  const lines = [];
+  lines.push("");
+  lines.push(`${t(p.name, lang)} (${statusVerb(p.status, lang)})`);
+  if (includeProblem) {
+    lines.push(`Problem: ${t(p.problem, lang)}`);
+    lines.push(`Solution: ${t(p.solution, lang)}`);
+  }
+  p.achievements?.forEach((a) => {
+    const metric = a.metric ? ` [${a.metric}]` : "";
+    lines.push(`- ${t(a.text, lang)}${metric}`);
+  });
+  return lines;
+}
+
 function ensureDir(p) {
   fs.mkdirSync(p, { recursive: true });
 }
@@ -70,8 +95,9 @@ function writeOut(rel, content) {
 
 function renderAts(data, lang) {
   const { profile, timeline, skills, education, certificates, projects } = data;
-  const featured = projects.filter((p) => p.featured);
   const side = projects.filter((p) => p.type === "side" && p.featured);
+  const freelance = projects.filter((p) => p.type === "freelance");
+  const certs = visibleCertificates(certificates);
 
   const lines = [];
   lines.push(`# ${t(profile.name, lang)}`);
@@ -91,24 +117,22 @@ function renderAts(data, lang) {
   timeline.forEach((job) => {
     const title = t(job.titleBrand || job.title, lang);
     lines.push("");
-    lines.push(`### ${title} | ${t(job.company, lang)}`);
+    lines.push(`### ${title} | ${companyLabel(job.company, lang)}`);
     lines.push(fmtRange(job.start, job.end, lang));
     lines.push(t(job.summary, lang));
     if (job.projectIds) {
       job.projectIds.forEach((pid) => {
         const p = projects.find((x) => x.id === pid);
         if (!p) return;
-        lines.push("");
-        lines.push(`${t(p.name, lang)} (${statusVerb(p.status, lang)})`);
-        lines.push(`Problem: ${t(p.problem, lang)}`);
-        lines.push(`Solution: ${t(p.solution, lang)}`);
-        p.achievements?.forEach((a) => {
-          const metric = a.metric ? ` [${a.metric}]` : "";
-          lines.push(`- ${t(a.text, lang)}${metric}`);
-        });
+        lines.push(...renderProjectBlock(p, lang));
       });
     }
   });
+  if (freelance.length) {
+    lines.push("");
+    lines.push(lang === "zh" ? "## Freelance / 接案專案" : "## Freelance Projects");
+    freelance.forEach((p) => lines.push(...renderProjectBlock(p, lang)));
+  }
   lines.push("");
   lines.push("## Featured Side Projects");
   side.forEach((p) => {
@@ -123,10 +147,10 @@ function renderAts(data, lang) {
   education.forEach((e) => {
     lines.push(`${t(e.school, lang)} — ${t(e.degree, lang)} (${e.start} — ${e.end})`);
   });
-  if (certificates.length) {
+  if (certs.length) {
     lines.push("");
     lines.push("## Certificates");
-    certificates.forEach((c) => lines.push(`- ${c.name}`));
+    certs.forEach((c) => lines.push(`- ${c.name}`));
   }
   lines.push("");
   lines.push(`Last updated: ${profile.lastUpdated}`);
@@ -185,8 +209,9 @@ function renderGitHubReadme(data) {
 
 function renderBrandHtml(data, lang) {
   const { profile, timeline, skills, education, certificates, highlights, projects } = data;
-  const featuredWork = projects.filter((p) => p.featured && p.type === "work");
   const featuredSide = projects.filter((p) => p.featured && p.type === "side");
+  const freelance = projects.filter((p) => p.type === "freelance");
+  const certs = visibleCertificates(certificates);
 
   const skillRows = skills.domains
     .map(
@@ -222,13 +247,25 @@ function renderBrandHtml(data, lang) {
       return `
       <article class="job">
         <div class="job-head">
-          <div><strong>${t(job.titleBrand || job.title, lang)}</strong> · ${t(job.company, lang)}</div>
+          <div><strong>${t(job.titleBrand || job.title, lang)}</strong> · ${companyLabel(job.company, lang)}</div>
           <time>${fmtRange(job.start, job.end, lang)}</time>
         </div>
         <p>${t(job.summary, lang)}</p>
         ${related}
       </article>`;
     })
+    .join("");
+
+  const freelanceHtml = freelance
+    .map(
+      (p) => `
+    <article class="project">
+      <h4>${t(p.name, lang)} <small>(${statusVerb(p.status, lang)})</small></h4>
+      <p><em>${t(p.problem, lang)}</em></p>
+      <p>${t(p.solution, lang)}</p>
+      <ul>${(p.achievements || []).map((a) => `<li>${t(a.text, lang)}</li>`).join("")}</ul>
+    </article>`
+    )
     .join("");
 
   const side = featuredSide
@@ -246,7 +283,7 @@ function renderBrandHtml(data, lang) {
     .map((e) => `<p><strong>${t(e.school, lang)}</strong> — ${t(e.degree, lang)} (${e.start} — ${e.end})</p>`)
     .join("");
 
-  const cert = certificates.map((c) => `<p>${c.name}</p>`).join("");
+  const cert = certs.map((c) => `<p>${c.name}</p>`).join("");
 
   return `<!DOCTYPE html>
 <html lang="${lang === "zh" ? "zh-Hant" : "en"}">
@@ -310,6 +347,15 @@ footer { text-align:center; color:var(--muted); font-size:0.78rem; margin-top:32
     ${jobs}
   </section>
 
+  ${
+    freelanceHtml
+      ? `<section>
+    <h2>${lang === "zh" ? "Freelance / 接案" : "Freelance"}</h2>
+    ${freelanceHtml}
+  </section>`
+      : ""
+  }
+
   <section>
     <h2>${lang === "zh" ? "Side Projects" : "Side Projects"}</h2>
     ${side}
@@ -356,6 +402,8 @@ function main() {
   const htmlEn = renderBrandHtml(data, "en");
   writeOut("resume/resume_zh.html", htmlZh);
   writeOut("resume/resume_en.html", htmlEn);
+  // GitHub Pages 根路徑預設開啟中文版
+  writeOut("resume/index.html", htmlZh);
 
   writeOut("linkedin/linkedin_summary_zh.md", renderLinkedIn(data, "zh"));
   writeOut("linkedin/linkedin_summary_en.md", renderLinkedIn(data, "en"));
