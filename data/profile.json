@@ -1,0 +1,31 @@
+{
+  "name": { "zh": "陳永政", "en": "Yong-Zheng Chen" },
+  "headline": {
+    "zh": "Senior Product Engineer · Mobile × Backend × AI Integration",
+    "en": "Senior Product Engineer · Mobile × Backend × AI Integration"
+  },
+  "headlineAlt": {
+    "zh": ["Technical Lead", "Solution Architect", "Engineering Manager"],
+    "en": ["Technical Lead", "Solution Architect", "Engineering Manager"]
+  },
+  "contact": {
+    "email": "oarkchen@gmail.com",
+    "phone": "0915-329-091",
+    "location": { "zh": "台灣新北市", "en": "New Taipei City, Taiwan" }
+  },
+  "summary": {
+    "zh": [
+      "資深 Product Engineer，10 年以上企業軟體經驗。從 Mobile 工程師成長為 Technical Lead，主導金融、電信、航空、保全、健康、FinTech、Blockchain 等領域之產品規劃、架構設計與團隊帶領。",
+      "擅長將商業需求轉化為可落地的系統架構：動態表單 MVVM、REST API、跨平台 App、後端整合及 AI 應用（含地端 AI 框架規劃）。目前於英濟擔任經理，帶領 4–6 人團隊，負責 Cares 2.0、PetCaresHub、地端會議助理等產品。"
+    ],
+    "en": [
+      "Senior Product Engineer with 10+ years building enterprise software. Progressed from mobile engineer to technical lead, driving product planning, architecture, and team leadership across banking, telecom, aviation, security, healthcare, fintech, and blockchain.",
+      "Strong at turning business requirements into shippable architecture: dynamic-form MVVM, REST APIs, cross-platform apps, backend integration, and AI applications (including edge AI framework planning). Currently Engineering Manager at E Ink, leading 4–6 engineers on Cares 2.0, PetCaresHub, and an edge AI meeting assistant."
+    ]
+  },
+  "languages": [
+    { "name": { "zh": "中文", "en": "Mandarin" }, "level": { "zh": "母語", "en": "Native" } },
+    { "name": { "zh": "英文", "en": "English" }, "level": { "zh": "中階（可閱讀技術文件與溝通）", "en": "Intermediate" } }
+  ],
+  "lastUpdated": "2026-06"
+}

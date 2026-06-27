@@ -1,0 +1,49 @@
+{
+  "id": "blockchain-platform",
+  "name": { "zh": "Blockchain & GameFi Platform", "en": "Blockchain & GameFi Platform" },
+  "type": "work",
+  "featured": true,
+  "status": "discontinued",
+  "domains": ["fintech", "blockchain", "mobile", "backend"],
+  "employer": { "name": { "zh": "赫斯全球", "en": "Hess Global" }, "showClientName": true },
+  "problem": {
+    "zh": "加密貨幣錢包、OTC 交易、GameFi 需快速迭代並因應商店政策變化。",
+    "en": "Crypto wallets, OTC, and GameFi needed fast iteration amid changing store policies."
+  },
+  "solution": {
+    "zh": "React Native 全端架構，含 Web 後台、Server、Smart Contract；必要時以 Serverless 過渡與 Web SSO 應對政策。",
+    "en": "React Native full-stack with web admin, server, smart contracts; serverless interim and web SSO pivots."
+  },
+  "responsibilities": {
+    "zh": ["組建 APP 團隊", "技術架構", "API 設計", "全端開發", "上架與維護"],
+    "en": ["Built APP team", "Architecture", "API design", "Full-stack delivery", "Store releases"]
+  },
+  "technologies": ["React Native", "Node.js", "Firebase", "AWS", "MongoDB", "Web3", "Smart Contracts", "Jest"],
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "必盈：三週雙平台上架，維護三年半",
+        "en": "Biying wallet: dual-platform launch in 3 weeks, 3.5 years maintenance"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "Summit：Firestore Serverless API 讓 PM/QA 提前測試",
+        "en": "Summit: Firestore serverless API for early PM/QA testing"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "Hinspot：政策調整後快速改 React Native Web + SSO",
+        "en": "Hinspot: pivoted to RN Web + SSO when App Store policy changed"
+      }
+    }
+  ],
+  "note": {
+    "zh": "部分 App 已因平台政策下架；經驗侧重架構、交付與政策應對。",
+    "en": "Some apps delisted due to store policies; experience focuses on architecture and delivery."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "dynamic-form-engine",
+  "name": { "zh": "Dynamic Form Engine", "en": "Dynamic Form Engine" },
+  "type": "work",
+  "featured": true,
+  "status": "completed",
+  "domains": ["enterprise", "mobile", "architecture"],
+  "employer": { "name": { "zh": "昕力資訊 / 接案", "en": "ThinkPower / Freelance" }, "showClientName": false },
+  "problem": {
+    "zh": "企業 App 常需依客戶、地區動態調整表單欄位，逐案重寫成本高。",
+    "en": "Enterprise apps needed dynamic forms without rebuilding for each client or region."
+  },
+  "solution": {
+    "zh": "以 MVVM 設計 JSON 驅動表單引擎，後端 JSON 或使用者操作即可調整樣式與 API 上傳格式。",
+    "en": "MVVM JSON-driven form engine: backend JSON or runtime edits drive layout and API payloads."
+  },
+  "responsibilities": {
+    "zh": ["SA 需求釐清", "SD 架構設計", "動態表單實作", "團隊帶領", "客戶端技術教育"],
+    "en": ["Requirements analysis", "Architecture design", "Dynamic form implementation", "Team lead", "Client training"]
+  },
+  "technologies": ["Xamarin", "iOS", "Android", "MVVM", "SQLite"],
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "新光保全：MVVM 動態表單，帶領 7 人、6 個月",
+        "en": "Shin Kong security: MVVM dynamic forms, led 7 engineers, 6 months"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "華航工單：動態表單 + Xamarin iOS 客戶端授課 5 天",
+        "en": "China Airlines work orders + 5-day Xamarin iOS client training"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "接案（路燈 Light、高公局 Freeway）：JSON / 動態欄位驅動表單",
+        "en": "Freelance Light & Freeway: JSON-driven dynamic forms"
+      }
+    }
+  ]
+}

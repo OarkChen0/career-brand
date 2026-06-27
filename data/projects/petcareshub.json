@@ -1,0 +1,38 @@
+{
+  "id": "petcareshub",
+  "name": { "zh": "PetCaresHub", "en": "PetCaresHub" },
+  "type": "work",
+  "featured": true,
+  "status": "in_progress",
+  "domains": ["healthcare", "saas", "ai"],
+  "employer": { "name": { "zh": "英濟", "en": "E Ink" }, "showClientName": true },
+  "problem": {
+    "zh": "寵物醫療需支援連鎖經營的多層組織與後續中控、獸醫端產品。",
+    "en": "Pet healthcare needed multi-tier franchise architecture and future admin/vet products."
+  },
+  "solution": {
+    "zh": "規劃中控總部、連鎖總部、院區三層商業架構，並預先開發 App 及 Server。",
+    "en": "Planned three-tier business model and pre-built app/server foundation."
+  },
+  "responsibilities": {
+    "zh": ["產品規劃", "商業架構設計", "App / Server 開發", "Cloud 部署規劃"],
+    "en": ["Product planning", "Business architecture", "App/server development", "Cloud deployment"]
+  },
+  "technologies": ["Flutter", "Swift", "Kotlin", "Express.js", "FastAPI", "Cloud Run", "React"],
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "從單一「寵物醫院」概念，規劃三層商業架構（中控總部／連鎖總部／院區）",
+        "en": "Planned three-tier architecture: central HQ, franchise HQ, clinics"
+      }
+    },
+    {
+      "status": "in_progress",
+      "text": {
+        "zh": "App 及 Server 預先開發（Cloud Run；TestFlight / Play Console 內測）",
+        "en": "Pre-built app and server on Cloud Run; TestFlight / internal testing"
+      }
+    }
+  ]
+}

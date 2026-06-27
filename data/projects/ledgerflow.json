@@ -1,0 +1,31 @@
+{
+  "id": "ledgerflow",
+  "name": { "zh": "LedgerFlow Balance（帳平）", "en": "LedgerFlow Balance" },
+  "type": "side",
+  "featured": true,
+  "status": "completed",
+  "domains": ["product", "mobile", "fintech"],
+  "problem": {
+    "zh": "個人記帳需自動連動帳戶與帳務，減少重複輸入。",
+    "en": "Personal finance needed automatic account and ledger linking."
+  },
+  "solution": {
+    "zh": "雙平台 App + Next.js 官網；獨立完成產品、架構、開發與上架。",
+    "en": "Dual-platform app + Next.js site; solo product, architecture, development, and launch."
+  },
+  "technologies": ["Kotlin", "Jetpack Compose", "SwiftUI", "Realm", "Next.js", "Firebase Hosting"],
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "Android / iOS 雙平台上架",
+        "en": "Live on Android and iOS"
+      }
+    }
+  ],
+  "links": [
+    { "label": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.oark.ledgerflowbalance" },
+    { "label": "App Store", "url": "https://apps.apple.com/us/app/ledgerflow-balance/id6768357009" },
+    { "label": "Website", "url": "https://ledgerflow-balance.web.app" }
+  ]
+}

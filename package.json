@@ -1,0 +1,11 @@
+{
+  "name": "career-brand",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Single source of truth for resume, portfolio, LinkedIn, and GitHub profile",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs"
+  }
+}

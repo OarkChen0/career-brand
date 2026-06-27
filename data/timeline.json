@@ -1,0 +1,64 @@
+[
+  {
+    "id": "eink-manager",
+    "company": { "zh": "英濟", "en": "E Ink (英濟)" },
+    "title": { "zh": "經理", "en": "Engineering Manager" },
+    "titleBrand": { "zh": "Senior Product Engineer / Manager", "en": "Senior Product Engineer / Manager" },
+    "start": "2025-09",
+    "end": null,
+    "location": { "zh": "台灣", "en": "Taiwan" },
+    "summary": {
+      "zh": "產品規劃、技術架構（Mobile / Backend / Web）、帶領 4–6 人團隊",
+      "en": "Product planning, full-stack architecture, leading 4–6 engineers"
+    },
+    "projectIds": ["cares-2", "petcareshub", "ai-meeting-assistant"]
+  },
+  {
+    "id": "hess-lead",
+    "company": { "zh": "赫斯全球有限公司", "en": "Hess Global" },
+    "title": { "zh": "Mobile Engineer（APP 小組 Leader）", "en": "Mobile Engineer (APP Squad Leader)" },
+    "titleBrand": { "zh": "Technical Lead", "en": "Technical Lead" },
+    "start": "2020-07",
+    "end": "2025-09",
+    "summary": {
+      "zh": "從零組建 APP 團隊；加密貨幣錢包、OTC、GameFi、遊戲平台全端開發",
+      "en": "Built APP team from scratch; crypto wallets, OTC, GameFi, gaming platform"
+    },
+    "projectIds": ["blockchain-platform"]
+  },
+  {
+    "id": "mitake-ios",
+    "company": { "zh": "三竹資訊股份有限公司", "en": "Mitake Information" },
+    "title": { "zh": "iOS 工程師", "en": "iOS Engineer" },
+    "start": "2019-07",
+    "end": "2020-06",
+    "summary": {
+      "zh": "土銀、兆豐、新光產險 APP 維護與新流程開發",
+      "en": "Land Bank, Mega Bank, Shin Kong insurance app maintenance"
+    }
+  },
+  {
+    "id": "thinkpower",
+    "company": { "zh": "昕力資訊股份有限公司", "en": "ThinkPower Information" },
+    "title": { "zh": "專案經理／SA／SD", "en": "PM / SA / SD" },
+    "titleBrand": { "zh": "Technical Lead", "en": "Technical Lead" },
+    "start": "2016-01",
+    "end": "2019-06",
+    "summary": {
+      "zh": "金融、電信、航空、健檢等專案；動態表單 MVVM、Xamarin、團隊帶領",
+      "en": "Banking, telecom, aviation, health projects; MVVM dynamic forms, team lead"
+    },
+    "projectIds": ["dynamic-form-engine"]
+  },
+  {
+    "id": "yuemingda",
+    "company": { "zh": "悅明達科技有限公司", "en": "Yuemingda Technology" },
+    "title": { "zh": "iOS 工程師", "en": "iOS Engineer" },
+    "start": "2015-11",
+    "end": "2015-12",
+    "summary": {
+      "zh": "智能房屋、視訊門鈴 in-house 開發",
+      "en": "Smart home and video doorbell in-house apps"
+    }
+  }
+]

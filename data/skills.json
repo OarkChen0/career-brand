@@ -1,0 +1,39 @@
+{
+  "domains": [
+    {
+      "id": "mobile",
+      "label": { "zh": "Mobile", "en": "Mobile" },
+      "items": ["Swift", "Kotlin", "Flutter", "React Native", "Xamarin", "React Native Web"]
+    },
+    {
+      "id": "backend",
+      "label": { "zh": "Backend", "en": "Backend" },
+      "items": ["Node.js", "Express", "FastAPI", "Python", "RESTful API", "Serverless API", "WebSocket"]
+    },
+    {
+      "id": "cloud",
+      "label": { "zh": "Cloud & Data", "en": "Cloud & Data" },
+      "items": ["Google Cloud Run", "Firebase", "Firestore", "AWS", "MongoDB", "SQLite", "Heroku"]
+    },
+    {
+      "id": "architecture",
+      "label": { "zh": "Architecture", "en": "Architecture" },
+      "items": ["MVVM", "Dynamic Forms", "API Design", "Clean Architecture", "Edge Deployment"]
+    },
+    {
+      "id": "ai",
+      "label": { "zh": "AI Application", "en": "AI Application" },
+      "items": ["LLM Integration", "Local / Edge AI", "AI-assisted Development", "Cursor", "Prompt Engineering"]
+    },
+    {
+      "id": "blockchain",
+      "label": { "zh": "Blockchain", "en": "Blockchain" },
+      "items": ["WalletConnect", "Web3", "Smart Contracts", "MetaMask Deep Link"]
+    },
+    {
+      "id": "leadership",
+      "label": { "zh": "Leadership", "en": "Leadership" },
+      "items": ["Technical Lead", "Architecture Review", "Agile", "Code Review", "Mentoring", "Hiring"]
+    }
+  ]
+}

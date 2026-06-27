@@ -1,0 +1,31 @@
+{
+  "id": "ai-meeting-assistant",
+  "name": { "zh": "地端 AI 會議助理", "en": "Edge AI Meeting Assistant" },
+  "type": "work",
+  "featured": true,
+  "status": "planning",
+  "domains": ["ai", "edge", "architecture"],
+  "employer": { "name": { "zh": "英濟", "en": "E Ink" }, "showClientName": true },
+  "problem": {
+    "zh": "需在地端硬體上提供 AI 即時轉錄與會議摘要，且讓 Junior 工程師能快速接手開發。",
+    "en": "Need edge-deployable AI transcription/summaries with a framework juniors can build on."
+  },
+  "solution": {
+    "zh": "定義 Python Server + Web 地端框架，建立架構與 API 模組範例。",
+    "en": "Defined edge framework (Python server + web) with reference architecture and API modules."
+  },
+  "responsibilities": {
+    "zh": ["架構設計", "框架定義", "API 模組範例", "技術傳承"],
+    "en": ["Architecture design", "Framework definition", "Reference API modules", "Engineering enablement"]
+  },
+  "technologies": ["Python", "FastAPI", "Edge Deployment", "Web"],
+  "achievements": [
+    {
+      "status": "planning",
+      "text": {
+        "zh": "定義可部署於地端電路板的框架，供 Junior 直接接手 UI 與細部邏輯",
+        "en": "Edge-deployable framework enabling junior engineers to implement UI and logic"
+      }
+    }
+  ]
+}
