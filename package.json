@@ -5,7 +5,9 @@
   "description": "Single source of truth for resume, portfolio, LinkedIn, and GitHub profile",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
+    "build": "node scripts/build.mjs --full",
+    "build:public": "node scripts/build.mjs --public",
+    "build:full": "node scripts/build.mjs --full",
     "validate": "node scripts/validate.mjs"
   }
 }

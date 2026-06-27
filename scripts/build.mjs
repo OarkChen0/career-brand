@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /**
  * career-brand build pipeline
- * Usage: npm run build
+ * Usage:
+ *   npm run build:public  — no email/phone (GitHub Pages, public repo)
+ *   npm run build:full    — merges profile.private.json (local PDF / job applications)
  */
 
 import fs from "fs";
@@ -14,11 +16,26 @@ const ROOT = path.join(__dirname, "..");
 const DATA = path.join(ROOT, "data");
 const OUT = path.join(ROOT, "output");
 
+const BUILD_MODE = process.argv.includes("--public") ? "public" : "full";
+
 function readJson(p) {
   return JSON.parse(fs.readFileSync(p, "utf8"));
 }
 
-function loadData() {
+function loadData(mode) {
+  const profile = readJson(path.join(DATA, "profile.json"));
+
+  if (mode === "full") {
+    const privatePath = path.join(DATA, "profile.private.json");
+    if (fs.existsSync(privatePath)) {
+      const priv = readJson(privatePath);
+      profile.contact = { ...profile.contact, ...priv.contact };
+    } else {
+      console.warn("  ⚠ data/profile.private.json not found — building without email/phone");
+      console.warn("    Copy data/profile.private.json.example and fill in your contact info.\n");
+    }
+  }
+
   const projectsDir = path.join(DATA, "projects");
   const projects = fs
     .readdirSync(projectsDir)
@@ -26,7 +43,7 @@ function loadData() {
     .map((f) => readJson(path.join(projectsDir, f)));
 
   return {
-    profile: readJson(path.join(DATA, "profile.json")),
+    profile,
     timeline: readJson(path.join(DATA, "timeline.json")),
     skills: readJson(path.join(DATA, "skills.json")),
     education: readJson(path.join(DATA, "education.json")),
@@ -67,6 +84,29 @@ function companyLabel(company, lang) {
   return name;
 }
 
+function hasPrivateContact(profile) {
+  return Boolean(profile.contact.email || profile.contact.phone);
+}
+
+function formatContactLine(profile, lang, { separator = " | " } = {}) {
+  const loc = t(profile.contact.location, lang);
+  if (hasPrivateContact(profile)) {
+    const parts = [profile.contact.email, profile.contact.phone, loc].filter(Boolean);
+    return parts.join(separator);
+  }
+  const note = t(profile.contact.publicNote, lang);
+  return note ? `${loc}${separator}${note}` : loc;
+}
+
+function formatContactHtml(profile, lang) {
+  const loc = t(profile.contact.location, lang);
+  if (hasPrivateContact(profile)) {
+    return [profile.contact.email, profile.contact.phone, loc].filter(Boolean).join(" · ");
+  }
+  const note = t(profile.contact.publicNote, lang);
+  return note ? `${loc} · ${note}` : loc;
+}
+
 function renderProjectBlock(p, lang, { includeProblem = true } = {}) {
   const lines = [];
   lines.push("");
@@ -103,7 +143,7 @@ function renderAts(data, lang) {
   lines.push(`# ${t(profile.name, lang)}`);
   lines.push(t(profile.headline, lang));
   lines.push("");
-  lines.push(`${profile.contact.email} | ${profile.contact.phone} | ${t(profile.contact.location, lang)}`);
+  lines.push(formatContactLine(profile, lang));
   lines.push("");
   lines.push(lang === "zh" ? "## Professional Summary" : "## Professional Summary");
   profile.summary[lang].forEach((p) => lines.push(p));
@@ -201,7 +241,12 @@ function renderGitHubReadme(data) {
   });
   lines.push("");
   lines.push("## Contact");
-  lines.push(`- Email: ${profile.contact.email}`);
+  if (hasPrivateContact(profile)) {
+    lines.push(`- Email: ${profile.contact.email}`);
+    if (profile.contact.phone) lines.push(`- Phone: ${profile.contact.phone}`);
+  } else {
+    lines.push(`- ${t(profile.contact.publicNote, "en")}`);
+  }
   lines.push("");
   lines.push(`> Generated from [career-brand](https://github.com/) — \`npm run build\``);
   return lines.join("\n");
@@ -326,7 +371,7 @@ footer { text-align:center; color:var(--muted); font-size:0.78rem; margin-top:32
   <header class="hero">
     <h1>${t(profile.name, lang)}</h1>
     <div class="headline">${t(profile.headline, lang)}</div>
-    <div class="contact">${profile.contact.email} · ${profile.contact.phone} · ${t(profile.contact.location, lang)}</div>
+    <div class="contact">${formatContactHtml(profile, lang)}</div>
   </header>
 
   <div class="stats">${statCards}</div>
@@ -392,8 +437,8 @@ function tryPdf(htmlPath, pdfPath) {
 }
 
 function main() {
-  console.log("Building career-brand...\n");
-  const data = loadData();
+  console.log(`Building career-brand (${BUILD_MODE})...\n`);
+  const data = loadData(BUILD_MODE);
 
   writeOut("resume/ats_resume.md", renderAts(data, "en"));
   writeOut("resume/ats_resume_zh.md", renderAts(data, "zh"));

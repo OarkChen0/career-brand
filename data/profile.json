@@ -9,9 +9,11 @@
     "en": ["Technical Lead", "Solution Architect", "Engineering Manager"]
   },
   "contact": {
-    "email": "oarkchen@gmail.com",
-    "phone": "0915-329-091",
-    "location": { "zh": "台灣新北市", "en": "New Taipei City, Taiwan" }
+    "location": { "zh": "台灣新北市", "en": "New Taipei City, Taiwan" },
+    "publicNote": {
+      "zh": "聯絡方式請透過 LinkedIn 或面試邀請",
+      "en": "Contact via LinkedIn or upon interview invitation"
+    }
   },
   "summary": {
     "zh": [

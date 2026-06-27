@@ -20,8 +20,21 @@
 ```bash
 cd ~/Documents/career-brand
 npm run validate
-npm run build
+npm run build:full      # 本機：含 email/phone，產 PDF 投履歷
+npm run build:public    # 公開版：無個資（GitHub Pages 用）
 ```
+
+首次本機 build 前，複製私密聯絡資料：
+
+```bash
+cp data/profile.private.json.example data/profile.private.json
+# 編輯 profile.private.json 填入 email、phone（此檔已在 .gitignore，不會 push）
+```
+
+| 指令 | 個資 | 用途 |
+|------|------|------|
+| `build:public` | 不顯示 email/phone | GitHub Actions → Pages |
+| `build:full` | 合併 `profile.private.json` | 本機 PDF、Email 附檔 |
 
 產出目錄：`output/`
 
@@ -42,8 +55,8 @@ output/
 ## 如何更新
 
 1. 編輯 `data/` 下的 JSON（新增 Side Project → `data/projects/xxx.json`）
-2. 執行 `npm run build`
-3. 所有輸出同步更新
+2. 本機預覽：`npm run build:full`；公開站：`npm run build:public`
+3. push 到 `main` 後，GitHub Actions 自動跑 `build:public` 更新 Pages
 
 ## 資料結構
 
