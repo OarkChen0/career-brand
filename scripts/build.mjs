@@ -10,6 +10,8 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { spawnSync } from "child_process";
+import { renderStoryBank } from "./render-stories.mjs";
+import { renderPortfolioSite } from "./render-portfolio.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -42,6 +44,9 @@ function loadData(mode) {
     .filter((f) => f.endsWith(".json"))
     .map((f) => readJson(path.join(projectsDir, f)));
 
+  const storiesPath = path.join(DATA, "stories.json");
+  const stories = fs.existsSync(storiesPath) ? readJson(storiesPath) : null;
+
   return {
     profile,
     timeline: readJson(path.join(DATA, "timeline.json")),
@@ -50,6 +55,7 @@ function loadData(mode) {
     certificates: readJson(path.join(DATA, "certificates.json")),
     highlights: readJson(path.join(DATA, "highlights.json")),
     projects,
+    stories,
   };
 }
 
@@ -131,6 +137,14 @@ function writeOut(rel, content) {
   ensureDir(path.dirname(full));
   fs.writeFileSync(full, content, "utf8");
   console.log(`  ✓ output/${rel}`);
+}
+
+function copyOut(srcRel, destRel) {
+  const src = path.join(OUT, srcRel);
+  const dest = path.join(OUT, destRel);
+  ensureDir(path.dirname(dest));
+  fs.copyFileSync(src, dest);
+  console.log(`  ✓ output/${destRel}`);
 }
 
 function renderAts(data, lang) {
@@ -453,6 +467,20 @@ function main() {
   writeOut("linkedin/linkedin_summary_zh.md", renderLinkedIn(data, "zh"));
   writeOut("linkedin/linkedin_summary_en.md", renderLinkedIn(data, "en"));
   writeOut("github/profile_readme.md", renderGitHubReadme(data));
+
+  if (data.stories) {
+    console.log("\nInterview story bank:");
+    writeOut("interview/story_bank_zh.md", renderStoryBank(data, "zh"));
+    writeOut("interview/story_bank_en.md", renderStoryBank(data, "en"));
+  }
+
+  console.log("\nPortfolio site:");
+  for (const { path: sitePath, content } of renderPortfolioSite(data)) {
+    writeOut(sitePath, content);
+  }
+  copyOut("resume/index.html", "site/resume/index.html");
+  copyOut("resume/resume_zh.html", "site/resume/resume_zh.html");
+  copyOut("resume/resume_en.html", "site/resume/resume_en.html");
 
   console.log("\nPDF generation:");
   tryPdf(path.join(OUT, "resume/resume_zh.html"), path.join(OUT, "resume/resume_zh.pdf"));

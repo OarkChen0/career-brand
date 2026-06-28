@@ -1,6 +1,6 @@
 # career-brand
 
-**Single Source of Truth** for resume, ATS export, LinkedIn, GitHub README, and (future) portfolio site.
+**Single Source of Truth** for resume, ATS export, LinkedIn, GitHub README, interview prep, and portfolio site.
 
 ## What is ATS?
 
@@ -40,32 +40,41 @@ cp data/profile.private.json.example data/profile.private.json
 
 ```
 output/
-├── resume/
-│   ├── ats_resume.md          # 英文 ATS（主投外商）
-│   ├── ats_resume_zh.md       # 中文 ATS（104 AI 匯入）
+├── resume/                    # 履歷（ATS + Brand HTML/PDF）
+│   ├── ats_resume.md
+│   ├── ats_resume_zh.md
 │   ├── resume_zh.html / .pdf
-│   └── resume_en.html / .pdf
-├── linkedin/
-│   ├── linkedin_summary_zh.md
-│   └── linkedin_summary_en.md
-└── github/
-    └── profile_readme.md
+│   ├── resume_en.html / .pdf
+│   └── index.html
+├── linkedin/                  # LinkedIn 摘要
+├── github/                    # GitHub Profile README
+├── interview/                 # 面試故事庫（本機準備用）
+│   ├── story_bank_zh.md
+│   └── story_bank_en.md
+└── site/                      # Portfolio 靜態站（GitHub Pages 部署此目錄）
+    ├── index.html             # 中文首頁
+    ├── en/index.html          # 英文首頁
+    ├── resume/                # 履歷頁
+    └── projects/              # 專案詳情頁
 ```
 
 ## 如何更新
 
 1. 編輯 `data/` 下的 JSON（新增 Side Project → `data/projects/xxx.json`）
-2. 本機預覽：`npm run build:full`；公開站：`npm run build:public`
-3. push 到 `main` 後，GitHub Actions 自動跑 `build:public` 更新 Pages
+2. 面試故事 → 編輯 `data/stories.json`（STAR 格式）
+3. 本機預覽：`npm run build:full`；公開站：`npm run build:public`
+4. push 到 `main` 後，GitHub Actions 自動跑 `build:public` 更新 Pages
 
 ## 資料結構
 
 ```
 data/
 ├── profile.json       # 姓名、定位、摘要、聯絡方式
+├── profile.private.json.example  # 私密聯絡資料範本（複製後填入）
 ├── timeline.json      # 工作經歷
 ├── skills.json        # 技能分類
 ├── highlights.json    # Career highlights 數字與領域
+├── stories.json       # 面試故事庫（STAR + 常見問題對照）
 ├── education.json
 ├── certificates.json
 └── projects/          # 每個專案一個 JSON
@@ -88,19 +97,57 @@ data/
 
 現職英濟仍誠實標示為 Engineering Manager，並在摘要中強調 Product & Architecture。
 
-## 部署個人網站（Phase 3）
+## Portfolio 網站（GitHub Pages）
 
-Portfolio 靜態站建置完成後，可部署至：
+本專案以 **GitHub Pages** 作為唯一公開部署方式。push 到 `main` 後，`.github/workflows/pages.yml` 會自動執行 `build:public` 並發布 `output/site/`。
 
-| 平台 | 建議 |
-|------|------|
-| **Cloudflare Pages** | 推薦：免費、快、自訂網域簡單 |
-| **GitHub Pages** | 推薦：與 repo 整合佳 |
-| **Firebase Hosting** | 可用：你已有 LedgerFlow 經驗，但職涯站不必綁 Firebase |
+`npm run build:public` 會產出：
 
-> 職涯 portfolio 是 **純靜態 HTML**，任一靜態 hosting 皆可；**不必** 為此另開 Firebase 專案，除非你想全部集中在 Google 生態。
+- **Tailwind CSS** + **Dark mode**（右上角切換，偏好存 localStorage）
+- 中英文首頁、專案詳情頁、履歷連結
+- 純靜態 HTML，無額外 build 依賴
 
-**從零開始教學：** 見 [docs/github-pages-setup.md](docs/github-pages-setup.md)（含 GitHub Actions 自動部署步驟）。
+### 更新公開網站
+
+1. 編輯 `data/` 下的 JSON
+2. `git push` 到 `main`
+3. 至 repo **Actions** 分頁確認 workflow 完成
+4. Settings → **Pages** 可查看 live 網址
+
+本機預覽（建議用本地 server，行為與 GitHub Pages 一致；**不要**直接用 `file://` 開資料夾）：
+
+```bash
+npm run preview
+```
+
+若已 build 過，只啟動 server：
+
+```bash
+npm run preview:serve
+```
+
+瀏覽器會開啟 `http://localhost:4173/`。若看到「目錄索引」畫面，代表開到了 `file://.../output/site/` 資料夾而非網站本身。
+
+若出現 port 已被占用，代表 preview server 還在跑——直接開啟該網址即可；要重啟請先在 terminal 按 `Ctrl+C` 結束舊的 server。
+
+### 網址結構
+
+```
+https://YOUR_USERNAME.github.io/career-brand/              ← Portfolio 首頁
+https://YOUR_USERNAME.github.io/career-brand/resume/       ← 履歷
+https://YOUR_USERNAME.github.io/career-brand/projects/ledgerflow.html
+```
+
+**從零設定 GitHub Pages：** 見 [docs/github-pages-setup.md](docs/github-pages-setup.md)。
+
+## 面試故事庫（Phase 2）
+
+`data/stories.json` 以 **STAR 格式** 整理代表經歷，build 後產出：
+
+- `output/interview/story_bank_zh.md`
+- `output/interview/story_bank_en.md`
+
+含常見問題快速對照（帶領團隊、最大成就、AI 經驗等）。此目錄 **不部署** 至公開網站，僅本機面試準備用。
 
 ## 與 Downloads/resume 的關係
 
@@ -111,6 +158,6 @@ Portfolio 靜態站建置完成後，可部署至：
 
 - [x] Phase 0: JSON 資料化
 - [x] Phase 1: ATS + Brand 履歷 + LinkedIn + GitHub
-- [ ] Phase 2: Interview story bank
-- [ ] Phase 3: Portfolio 網站（Tailwind + dark mode）
-- [ ] Phase 4: `firebase deploy` / Cloudflare 一鍵部署腳本
+- [x] Phase 2: Interview story bank
+- [x] Phase 3: Portfolio 網站（Tailwind + dark mode）
+- [x] Phase 4: GitHub Pages 自動部署

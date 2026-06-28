@@ -1,0 +1,406 @@
+{
+  "categories": [
+    { "id": "leadership", "label": { "zh": "帶領團隊", "en": "Leadership" } },
+    { "id": "technical", "label": { "zh": "技術決策", "en": "Technical" } },
+    { "id": "product", "label": { "zh": "產品與架構", "en": "Product & Architecture" } },
+    { "id": "challenge", "label": { "zh": "挑戰與應變", "en": "Challenges" } },
+    { "id": "solo", "label": { "zh": "獨立交付", "en": "Solo Delivery" } }
+  ],
+  "stories": [
+    {
+      "id": "build-team-from-zero",
+      "title": { "zh": "從零組建 APP 團隊", "en": "Building an APP Team from Scratch" },
+      "projectId": "blockchain-platform",
+      "timelineId": "hearts-lead",
+      "category": "leadership",
+      "tags": ["team building", "hiring", "technical lead"],
+      "questions": {
+        "zh": [
+          "描述一次從零組建團隊的經驗",
+          "你如何帶領 Junior 工程師成長？"
+        ],
+        "en": [
+          "Tell me about building a team from scratch",
+          "How do you mentor junior engineers?"
+        ]
+      },
+      "star": {
+        "situation": {
+          "zh": "加入赫斯全球時，公司需要加密貨幣錢包、OTC、GameFi 等產品，但沒有專職 Mobile 團隊。",
+          "en": "When I joined Hearts Worldwide, the company needed crypto wallets, OTC, and GameFi products but had no dedicated mobile team."
+        },
+        "task": {
+          "zh": "擔任 APP 小組 Leader，從招聘、架構到交付全權負責，讓團隊能持續迭代多個 App。",
+          "en": "As APP squad leader, I owned hiring, architecture, and delivery so the team could iterate on multiple apps."
+        },
+        "action": {
+          "zh": [
+            "定義 React Native 全端架構（App、Web 後台、Server、Smart Contract），讓新成員有明確模組邊界",
+            "建立 Code Review 與 API 設計規範，Junior 可照範例擴充功能",
+            "必盈錢包：三週內完成雙平台上架，之後維護三年半",
+            "Summit：先用 Firestore Serverless API 讓 PM/QA 提前測試，再逐步補完後端"
+          ],
+          "en": [
+            "Defined React Native full-stack architecture (app, web admin, server, smart contracts) with clear module boundaries",
+            "Established code review and API design conventions so juniors could extend features from reference modules",
+            "Biying wallet: dual-platform launch in 3 weeks, maintained for 3.5 years",
+            "Summit: Firestore serverless API first so PM/QA could test early, then hardened backend"
+          ]
+        },
+        "result": {
+          "zh": "團隊從零成長到可並行維護多個 App；後續 Hinspot 因 App Store 政策改 React Native Web + SSO，展現快速應變能力。（相關 App 現均已下架，經驗侧重架構與交付。）",
+          "en": "Team grew from zero to maintaining multiple apps in parallel; later pivoted Hinspot to RN Web + SSO when App Store policy changed. (Apps since delisted; experience focuses on architecture and delivery.)"
+        }
+      },
+      "followUp": {
+        "zh": ["若追問下架原因：誠實說明平台政策與營運因素，強調架構、交付速度、政策應對仍適用產品工程角色"],
+        "en": ["If asked about delisting: be honest about store policies and business factors; emphasize architecture, delivery speed, and policy pivots"]
+      }
+    },
+    {
+      "id": "security-remediation",
+      "title": { "zh": "資安風險大幅縮減", "en": "Security Risk Remediation at Scale" },
+      "projectId": "cares-2",
+      "timelineId": "megaforce-manager",
+      "category": "technical",
+      "tags": ["security", "refactoring", "healthcare"],
+      "questions": {
+        "zh": [
+          "描述一次解決重大技術問題的經驗",
+          "你如何處理資安或技術債？"
+        ],
+        "en": [
+          "Tell me about solving a major technical problem",
+          "How do you handle security or tech debt?"
+        ]
+      },
+      "star": {
+        "situation": {
+          "zh": "Cares 2.0 健康數據平台面臨大量中／高風險資安項目，且長時間區間查詢效能不佳。",
+          "en": "Cares 2.0 health data platform had many medium/high security findings and poor long-range query performance."
+        },
+        "task": {
+          "zh": "在不中斷現有服務的前提下，協助重構、改善資安，並優化資料讀取。",
+          "en": "Remediate security issues and improve data access without disrupting live service."
+        },
+        "action": {
+          "zh": [
+            "設計健康數據摘要資料模型，將長時間區間查詢改為讀取預聚合摘要，解決效能瓶頸",
+            "逐項盤點 168 個中／高風險項目，分類優先序，與團隊協作重構與修補",
+            "Flutter App 同步維護，確保前端配合新資料模型"
+          ],
+          "en": [
+            "Designed health data summary model so long-range queries read pre-aggregated summaries instead of raw scans",
+            "Triaged 168 medium/high risks by priority and collaborated on refactors and patches",
+            "Maintained Flutter app in sync with the new data model"
+          ]
+        },
+        "result": {
+          "zh": "中／高風險資安項目由 168 項降至 12 項（縮減逾 90%）；長時間區間查詢效能明顯改善。專案後續已結束。",
+          "en": "Reduced medium/high security risks from 168 to 12 (>90%); long-range query performance improved significantly. Project has since concluded."
+        }
+      }
+    },
+    {
+      "id": "dynamic-form-architecture",
+      "title": { "zh": "動態表單引擎與團隊帶領", "en": "Dynamic Form Engine & Team Leadership" },
+      "projectId": "dynamic-form-enterprise",
+      "timelineId": "thinkpower",
+      "category": "product",
+      "tags": ["architecture", "MVVM", "enterprise"],
+      "questions": {
+        "zh": [
+          "描述一次架構設計如何降低開發成本",
+          "帶領過幾人的團隊？如何分工？"
+        ],
+        "en": [
+          "Describe architecture that reduced development cost",
+          "How large a team have you led? How did you divide work?"
+        ]
+      },
+      "star": {
+        "situation": {
+          "zh": "昕力時期多家企業 in-house App（保全、航空、健檢、電信、金融）需依場域動態調整表單，逐案重寫成本高。",
+          "en": "At ThinkPower, multiple enterprise in-house apps (security, aviation, health, telecom, banking) needed dynamic forms; per-client rebuilds were expensive."
+        },
+        "task": {
+          "zh": "設計可複用的 MVVM 動態表單引擎，並在峰值帶領 7 人團隊交付。",
+          "en": "Design a reusable MVVM dynamic form engine and lead up to 7 engineers at peak."
+        },
+        "action": {
+          "zh": [
+            "以 JSON 驅動表單欄位、驗證、樣式與 API 上傳格式，新案只需配置 JSON",
+            "某保全業專案：6 個月、7 人，我負責 SA/SD 與核心引擎，其餘成員負責場域客製",
+            "某航空業：動態表單 + 至客戶端 Xamarin iOS 授課 5 天，降低客戶維護成本"
+          ],
+          "en": [
+            "JSON-driven fields, validation, styling, and API payloads—new projects only needed JSON config",
+            "Security industry project: 6 months, 7 people; I owned SA/SD and core engine, others handled domain customization",
+            "Aviation project: dynamic forms plus 5-day Xamarin iOS training at client site"
+          ]
+        },
+        "result": {
+          "zh": "多個 in-house 專案共用同一套引擎，大幅縮短新案開發時間；後續接案也沿用此架構。",
+          "en": "Multiple in-house projects shared one engine, cutting new project time; later freelance work reused the same architecture."
+        }
+      }
+    },
+    {
+      "id": "policy-pivot-hinspot",
+      "title": { "zh": "App Store 政策變更的快速應變", "en": "Pivoting When App Store Policy Changed" },
+      "projectId": "blockchain-platform",
+      "timelineId": "hearts-lead",
+      "category": "challenge",
+      "tags": ["policy", "pivot", "react native web"],
+      "questions": {
+        "zh": [
+          "描述一次計畫趕不上變化，你如何應對？",
+          "遇到外部限制（政策、時程）怎麼處理？"
+        ],
+        "en": [
+          "Tell me about when plans changed and how you adapted",
+          "How do you handle external constraints like policy or deadlines?"
+        ]
+      },
+      "star": {
+        "situation": {
+          "zh": "Hinspot GameFi 產品已以 React Native 開發，App Store 政策突然收緊，原上架路徑不可行。",
+          "en": "Hinspot GameFi was built in React Native when App Store policy tightened and the original release path was blocked."
+        },
+        "task": {
+          "zh": "在有限時間內找到可交付方案，讓用戶仍能使用核心功能。",
+          "en": "Find a shippable alternative so users could still access core features."
+        },
+        "action": {
+          "zh": [
+            "評估 Web、Hybrid、Serverless 過渡等選項，選擇 React Native Web + SSO 作為最快可行路徑",
+            "調整登入與金流流程以符合新政策",
+            "與 PM 對齊 MVP 範圍，先上線核心功能"
+          ],
+          "en": [
+            "Evaluated Web, hybrid, and serverless interim options; chose RN Web + SSO as fastest viable path",
+            "Adjusted login and payment flows for new policy requirements",
+            "Aligned MVP scope with PM to ship core features first"
+          ]
+        },
+        "result": {
+          "zh": "在政策窗口內完成改版上線；團隊累積了政策應對與技術選型經驗。（App 現已下架。）",
+          "en": "Shipped the pivot within the policy window; team gained experience in policy response and tech trade-offs. (App since delisted.)"
+        }
+      }
+    },
+    {
+      "id": "edge-ai-framework",
+      "title": { "zh": "地端 AI 框架規劃與技術傳承", "en": "Edge AI Framework for Junior Enablement" },
+      "projectId": "ai-meeting-assistant",
+      "timelineId": "megaforce-manager",
+      "category": "leadership",
+      "tags": ["AI", "edge", "architecture", "mentoring"],
+      "questions": {
+        "zh": [
+          "如何讓 Junior 工程師快速接手複雜專案？",
+          "描述一次 AI 相關的架構決策"
+        ],
+        "en": [
+          "How do you enable juniors on complex projects?",
+          "Describe an architecture decision involving AI"
+        ]
+      },
+      "star": {
+        "situation": {
+          "zh": "Megaforce 需在地端硬體上提供 AI 即時轉錄與會議摘要，團隊含 Junior 工程師，需可持續擴充。",
+          "en": "Megaforce needed edge-deployable AI transcription and meeting summaries; the team included juniors and had to scale."
+        },
+        "task": {
+          "zh": "設計可部署於地端電路板的框架，讓 Junior 能依模組範例開發 UI 與業務邏輯。",
+          "en": "Design an edge-deployable framework so juniors could build UI and business logic from reference modules."
+        },
+        "action": {
+          "zh": [
+            "定義 Python Server + Web 地端架構，模組化 API（轉錄、摘要、設定）",
+            "撰寫可运行的 API 模組範例與部署文件",
+            "與 Junior 分工：我負責框架與核心 API，他們負責 Web UI 與細部邏輯"
+          ],
+          "en": [
+            "Defined Python server + web edge architecture with modular APIs (transcription, summary, config)",
+            "Wrote runnable API module examples and deployment docs",
+            "Split work: I owned framework and core APIs; juniors owned web UI and business logic"
+          ]
+        },
+        "result": {
+          "zh": "框架規劃完成，開發進行中；Junior 已能依範例獨立開發子模組。",
+          "en": "Framework planning complete; development in progress; juniors can independently build sub-modules from examples."
+        }
+      }
+    },
+    {
+      "id": "petcareshub-business-architecture",
+      "title": { "zh": "PetCaresHub 三層商業架構規劃", "en": "PetCaresHub Three-Tier Business Architecture" },
+      "projectId": "petcareshub",
+      "timelineId": "megaforce-manager",
+      "category": "product",
+      "tags": ["healthcare", "SaaS", "architecture"],
+      "questions": {
+        "zh": [
+          "描述一次從 0 到 1 的產品規劃",
+          "如何設計可擴展的多租戶／連鎖架構？"
+        ],
+        "en": [
+          "Describe a 0-to-1 product planning experience",
+          "How do you design scalable multi-tenant or franchise architecture?"
+        ]
+      },
+      "star": {
+        "situation": {
+          "zh": "寵物醫療產品最初是單一「寵物醫院」概念，但客戶實際需要連鎖經營的多層組織。",
+          "en": "Pet healthcare product started as a single-clinic concept, but the client needed multi-tier franchise operations."
+        },
+        "task": {
+          "zh": "規劃可支援中控總部、連鎖總部、院區三層的商業與技術架構，並預先開發 App 及 Server。",
+          "en": "Plan business and technical architecture for central HQ, franchise HQ, and clinic tiers; pre-build app and server."
+        },
+        "action": {
+          "zh": [
+            "與業務對齊三層權限、資料隔離與營運流程",
+            "選型 Flutter + Express/FastAPI + Cloud Run，支援跨平台與彈性部署",
+            "App 及 Server 預先開發，TestFlight / Play Console 內測"
+          ],
+          "en": [
+            "Aligned with business on three-tier permissions, data isolation, and ops flows",
+            "Chose Flutter + Express/FastAPI + Cloud Run for cross-platform and flexible deployment",
+            "Pre-built app and server; TestFlight / Play Console internal testing"
+          ]
+        },
+        "result": {
+          "zh": "三層商業架構定案，App 與 Server 基礎建設就緒，後續可擴充獸醫端與中控產品。專案進行中。",
+          "en": "Three-tier model approved; app and server foundation ready for vet and admin products. In progress."
+        }
+      }
+    },
+    {
+      "id": "solo-ledgerflow",
+      "title": { "zh": "獨立完成 LedgerFlow 全端上架", "en": "Solo End-to-End Launch of LedgerFlow" },
+      "projectId": "ledgerflow",
+      "category": "solo",
+      "tags": ["side project", "mobile", "product"],
+      "questions": {
+        "zh": [
+          "描述一次獨立完成的專案",
+          "你如何平衡正職與 Side Project？"
+        ],
+        "en": [
+          "Describe a project you completed independently",
+          "How do you balance full-time work and side projects?"
+        ]
+      },
+      "star": {
+        "situation": {
+          "zh": "個人記帳 App 市場已有許多競品，但多數需手動輸入，帳戶與帳務連動不足。",
+          "en": "Personal finance apps abound, but most require manual entry with weak account–ledger linking."
+        },
+        "task": {
+          "zh": "獨立完成產品定位、架構、雙平台 App、官網與上架。",
+          "en": "Solo product positioning, architecture, dual-platform app, website, and store launch."
+        },
+        "action": {
+          "zh": [
+            "Kotlin + Jetpack Compose（Android）、SwiftUI（iOS）、Realm 本地資料",
+            "Next.js 官網 + Firebase Hosting",
+            "自行處理 App Store / Google Play 審核與迭代"
+          ],
+          "en": [
+            "Kotlin + Jetpack Compose (Android), SwiftUI (iOS), Realm local data",
+            "Next.js site on Firebase Hosting",
+            "Handled App Store / Google Play review and iterations myself"
+          ]
+        },
+        "result": {
+          "zh": "Android / iOS 雙平台上架，官網上線；驗證了從產品到交付的完整能力。",
+          "en": "Live on Android and iOS with a public website; validates full product-to-delivery capability."
+        }
+      }
+    },
+    {
+      "id": "deadline-biying-wallet",
+      "title": { "zh": "三週雙平台上架", "en": "Dual-Platform Launch in Three Weeks" },
+      "projectId": "blockchain-platform",
+      "timelineId": "hearts-lead",
+      "category": "challenge",
+      "tags": ["deadline", "delivery", "react native"],
+      "questions": {
+        "zh": [
+          "描述一次在緊迫時程下交付的經驗",
+          "如何取捨功能以準時上線？"
+        ],
+        "en": [
+          "Tell me about delivering under a tight deadline",
+          "How do you scope features to ship on time?"
+        ]
+      },
+      "star": {
+        "situation": {
+          "zh": "必盈加密貨幣錢包需在極短時間內雙平台上架，以配合業務窗口。",
+          "en": "Biying crypto wallet needed a dual-platform launch in weeks to meet a business window."
+        },
+        "task": {
+          "zh": "三週內完成 iOS + Android 上架，且後續需長期維護。",
+          "en": "Ship iOS and Android within three weeks with a codebase maintainable long-term."
+        },
+        "action": {
+          "zh": [
+            "選 React Native 共用邏輯，減少雙端重複開發",
+            "與 PM 定義 MVP：核心錢包、轉帳、安全機制優先",
+            "每日 stand-up 追蹤阻塞項，必要時我直接補位關鍵模組"
+          ],
+          "en": [
+            "Chose React Native to share logic across platforms",
+            "Defined MVP with PM: core wallet, transfer, security first",
+            "Daily stand-ups on blockers; I directly unblocked critical modules when needed"
+          ]
+        },
+        "result": {
+          "zh": "三週內雙平台上架，之後維護三年半。",
+          "en": "Dual-platform launch in three weeks; maintained for 3.5 years."
+        }
+      }
+    }
+  ],
+  "quickReference": [
+    {
+      "question": { "zh": "最大的成就／技術貢獻", "en": "Greatest achievement / technical impact" },
+      "storyIds": ["security-remediation", "dynamic-form-architecture"]
+    },
+    {
+      "question": { "zh": "帶領團隊", "en": "Leadership" },
+      "storyIds": ["build-team-from-zero", "dynamic-form-architecture", "edge-ai-framework"]
+    },
+    {
+      "question": { "zh": "失敗或挫折", "en": "Failure or setback" },
+      "storyIds": ["policy-pivot-hinspot"],
+      "note": {
+        "zh": "可誠實談 App 下架，但聚焦從中学到的架構與應變",
+        "en": "Be honest about delisting; focus on architecture and adaptability lessons"
+      }
+    },
+    {
+      "question": { "zh": "為什麼離開上一家公司", "en": "Why leave previous company" },
+      "storyIds": [],
+      "note": {
+        "zh": "赫斯→Megaforce：尋求更完整的產品與 AI 整合機會；現職強調 Product Engineer 定位",
+        "en": "Hearts→Megaforce: sought fuller product and AI integration scope; current role emphasizes Product Engineer identity"
+      }
+    },
+    {
+      "question": { "zh": "獨立工作能力", "en": "Independent work" },
+      "storyIds": ["solo-ledgerflow"]
+    },
+    {
+      "question": { "zh": "AI 相關經驗", "en": "AI experience" },
+      "storyIds": ["edge-ai-framework", "security-remediation"]
+    },
+    {
+      "question": { "zh": "架構設計", "en": "Architecture design" },
+      "storyIds": ["dynamic-form-architecture", "petcareshub-business-architecture", "edge-ai-framework"]
+    }
+  ]
+}

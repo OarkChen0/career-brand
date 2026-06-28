@@ -8,6 +8,8 @@
     "build": "node scripts/build.mjs --full",
     "build:public": "node scripts/build.mjs --public",
     "build:full": "node scripts/build.mjs --full",
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "preview": "npm run build:public && node scripts/preview.mjs",
+    "preview:serve": "node scripts/preview.mjs"
   }
 }
