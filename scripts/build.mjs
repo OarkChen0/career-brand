@@ -103,8 +103,11 @@ function formatContactLine(profile, lang, { separator = " | " } = {}) {
     const parts = [profile.contact.email, profile.contact.phone, loc].filter(Boolean);
     return parts.join(separator);
   }
+  const parts = [loc];
+  if (profile.contact.linkedin) parts.push(profile.contact.linkedin);
   const note = t(profile.contact.publicNote, lang);
-  return note ? `${loc}${separator}${note}` : loc;
+  if (note) parts.push(note);
+  return parts.join(separator);
 }
 
 function formatContactHtml(profile, lang) {
@@ -112,8 +115,13 @@ function formatContactHtml(profile, lang) {
   if (hasPrivateContact(profile)) {
     return [profile.contact.email, profile.contact.phone, loc].filter(Boolean).join(" · ");
   }
+  const parts = [loc];
+  if (profile.contact.linkedin) {
+    parts.push(`<a href="${profile.contact.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>`);
+  }
   const note = t(profile.contact.publicNote, lang);
-  return note ? `${loc} · ${note}` : loc;
+  if (note) parts.push(note);
+  return parts.join(" · ");
 }
 
 function renderProjectBlock(p, lang, { includeProblem = true } = {}) {
@@ -261,7 +269,11 @@ function renderGitHubReadme(data) {
   if (hasPrivateContact(profile)) {
     lines.push(`- Email: ${profile.contact.email}`);
     if (profile.contact.phone) lines.push(`- Phone: ${profile.contact.phone}`);
-  } else {
+  }
+  if (profile.contact.linkedin) {
+    lines.push(`- LinkedIn: ${profile.contact.linkedin}`);
+  }
+  if (!hasPrivateContact(profile) && !profile.contact.linkedin) {
     lines.push(`- ${t(profile.contact.publicNote, "en")}`);
   }
   lines.push("");

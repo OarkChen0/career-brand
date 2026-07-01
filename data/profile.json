@@ -14,9 +14,10 @@
   },
   "contact": {
     "location": { "zh": "台灣新北市", "en": "New Taipei City, Taiwan" },
+    "linkedin": "https://www.linkedin.com/in/%E6%B0%B8%E6%94%BF-%E9%99%B3-7b81a9aa/",
     "publicNote": {
-      "zh": "聯絡方式請透過 LinkedIn 或面試邀請",
-      "en": "Contact via LinkedIn or upon interview invitation"
+      "zh": "歡迎透過 LinkedIn 聯絡",
+      "en": "Open to connecting on LinkedIn"
     }
   },
   "summary": {

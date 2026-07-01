@@ -95,8 +95,15 @@ function getPaths({ lang, page, projectId }) {
   };
 }
 
-function siteShell({ title, lang, content, paths }) {
+function siteShell({ title, lang, content, paths, profile }) {
   const aiNativeLabel = lang === "zh" ? "AI-native 開發" : "AI-native Development";
+  const linkedin = profile?.contact?.linkedin;
+  const linkedinNav = linkedin
+    ? `<a href="${linkedin}" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>`
+    : "";
+  const linkedinFooter = linkedin
+    ? `<a href="${linkedin}" class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a> · `
+    : "";
   return `<!DOCTYPE html>
 <html lang="${lang === "zh" ? "zh-Hant" : "en"}" class="scroll-smooth">
 <head>
@@ -147,6 +154,7 @@ function siteShell({ title, lang, content, paths }) {
     <a href="${paths.home}" class="font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">${lang === "zh" ? "陳永政" : "Yong-Zheng Chen"}</a>
     <div class="flex items-center gap-4">
       <a href="${paths.aiNative}" class="hidden sm:inline text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">${aiNativeLabel}</a>
+      ${linkedinNav}
       <a href="${paths.resume}" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">${lang === "zh" ? "履歷" : "Resume"}</a>
       <a href="${paths.langSwitch.href}" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">${paths.langSwitch.label}</a>
       <button type="button" id="theme-toggle" class="rounded-md border border-zinc-200 dark:border-zinc-700 px-2 py-1 text-xs text-zinc-500 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors" aria-label="Toggle theme">◐</button>
@@ -157,7 +165,7 @@ function siteShell({ title, lang, content, paths }) {
 ${content}
 </main>
 <footer class="border-t border-zinc-200/60 dark:border-zinc-800/60 py-10 text-center text-xs text-zinc-400">
-  <p>${lang === "zh" ? "以工程思維打造產品" : "Building products with engineering rigor"} · ${new Date().getFullYear()}</p>
+  <p>${linkedinFooter}${lang === "zh" ? "以工程思維打造產品" : "Building products with engineering rigor"} · ${new Date().getFullYear()}</p>
 </footer>
 <script>
 document.getElementById('theme-toggle')?.addEventListener('click', () => {
@@ -263,8 +271,9 @@ function renderHome(data, lang) {
     <div class="mt-8 flex flex-wrap gap-3">
       <a href="${paths.resume}" class="rounded-md bg-zinc-900 dark:bg-zinc-100 px-4 py-2 text-sm font-medium text-white dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">${lang === "zh" ? "查看履歷" : "View Resume"}</a>
       <a href="${paths.aiNative}" class="rounded-md border border-zinc-200 dark:border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">${lang === "zh" ? "AI-native 開發" : "AI-native Development"}</a>
+      ${profile.contact.linkedin ? `<a href="${profile.contact.linkedin}" class="rounded-md border border-zinc-200 dark:border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>` : ""}
     </div>
-    <p class="mt-5 text-xs text-zinc-400">${t(profile.contact.publicNote, lang) || t(profile.contact.location, lang)}</p>
+    <p class="mt-5 text-xs text-zinc-400">${t(profile.contact.location, lang)}${profile.contact.publicNote ? ` · ${t(profile.contact.publicNote, lang)}` : ""}</p>
   </section>
 
   <!-- Engineering Philosophy -->
@@ -305,6 +314,7 @@ function renderHome(data, lang) {
     lang,
     content,
     paths,
+    profile,
   });
 }
 
@@ -398,6 +408,7 @@ function renderProjectPage(data, project, lang) {
     lang,
     content,
     paths,
+    profile,
   });
 }
 
@@ -465,6 +476,7 @@ function renderAiNativePage(data, lang) {
     lang,
     content,
     paths,
+    profile,
   });
 }
 
