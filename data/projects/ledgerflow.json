@@ -5,6 +5,51 @@
   "featured": true,
   "status": "completed",
   "domains": ["product", "mobile", "fintech"],
+  "businessChallenge": {
+    "zh": "個人記帳需自動連動銀行帳戶與帳務，減少重複輸入，同時提供直覺的雙平台使用體驗。",
+    "en": "Personal finance needed automatic account and ledger linking with an intuitive dual-platform experience, minimizing manual data entry."
+  },
+  "technicalStrategy": {
+    "zh": "採用原生開發（Kotlin + SwiftUI）確保各平台最佳體驗，Realm 作為本地資料層。獨立完成產品設計、架構、開發與上架全流程。",
+    "en": "Native development (Kotlin + SwiftUI) for optimal platform experience, Realm as local data layer. Solo ownership of product design, architecture, development, and launch."
+  },
+  "responsibilities": {
+    "zh": ["產品設計", "架構設計", "Android 開發", "iOS 開發", "官網開發", "上架與維護"],
+    "en": ["Product Design", "Architecture Design", "Android Development", "iOS Development", "Website Development", "Store Launch & Maintenance"]
+  },
+  "architectureDecisions": [
+    "Native per Platform",
+    "Local-first Data",
+    "Realm Database",
+    "MVVM",
+    "Firebase Hosting"
+  ],
+  "technologies": ["Kotlin", "Jetpack Compose", "SwiftUI", "Realm", "Next.js", "Firebase Hosting"],
+  "impact": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "Android / iOS 雙平台上架",
+        "en": "Live on Android and iOS"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "獨立完成從產品概念到上架的完整交付",
+        "en": "Solo end-to-end delivery from product concept to store launch"
+      }
+    }
+  ],
+  "lessonsLearned": {
+    "zh": "Side project 是驗證產品思維與全端能力的最佳場域。原生開發雖成本高，但對 FinTech 類產品的體驗與效能至關重要。",
+    "en": "Side projects are the best arena to validate product thinking and full-stack capability. Native development costs more, but is critical for FinTech UX and performance."
+  },
+  "links": [
+    { "label": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.oark.ledgerflowbalance" },
+    { "label": "App Store", "url": "https://apps.apple.com/us/app/ledgerflow-balance/id6768357009" },
+    { "label": "Website", "url": "https://ledgerflow-balance.web.app" }
+  ],
   "problem": {
     "zh": "個人記帳需自動連動帳戶與帳務，減少重複輸入。",
     "en": "Personal finance needed automatic account and ledger linking."
@@ -13,7 +58,6 @@
     "zh": "雙平台 App + Next.js 官網；獨立完成產品、架構、開發與上架。",
     "en": "Dual-platform app + Next.js site; solo product, architecture, development, and launch."
   },
-  "technologies": ["Kotlin", "Jetpack Compose", "SwiftUI", "Realm", "Next.js", "Firebase Hosting"],
   "achievements": [
     {
       "status": "completed",
@@ -22,10 +66,5 @@
         "en": "Live on Android and iOS"
       }
     }
-  ],
-  "links": [
-    { "label": "Google Play", "url": "https://play.google.com/store/apps/details?id=com.oark.ledgerflowbalance" },
-    { "label": "App Store", "url": "https://apps.apple.com/us/app/ledgerflow-balance/id6768357009" },
-    { "label": "Website", "url": "https://ledgerflow-balance.web.app" }
   ]
 }

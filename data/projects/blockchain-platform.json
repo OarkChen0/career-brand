@@ -6,20 +6,27 @@
   "status": "discontinued",
   "domains": ["fintech", "blockchain", "mobile", "backend"],
   "employer": { "name": { "zh": "赫斯全球", "en": "Hearts Worldwide Co., Ltd." }, "showClientName": true },
-  "problem": {
-    "zh": "加密貨幣錢包、OTC 交易、GameFi 需快速迭代並因應商店政策變化。",
-    "en": "Crypto wallets, OTC, and GameFi needed fast iteration amid changing store policies."
+  "businessChallenge": {
+    "zh": "加密貨幣錢包、OTC 交易與 GameFi 產品需快速迭代上線，同時因應 App Store 政策變化與營運調整。",
+    "en": "Crypto wallets, OTC trading, and GameFi products needed rapid iteration and launch while adapting to App Store policy changes and business pivots."
   },
-  "solution": {
-    "zh": "React Native 全端架構，含 Web 後台、Server、Smart Contract；必要時以 Serverless 過渡與 Web SSO 應對政策。",
-    "en": "React Native full-stack with web admin, server, smart contracts; serverless interim and web SSO pivots."
+  "technicalStrategy": {
+    "zh": "建立 React Native 全端架構，涵蓋 Web 後台、Server 與 Smart Contract。當商店政策阻擋原生 App 時，以 Serverless API 過渡並快速轉向 Web SSO 方案，確保產品持續交付。",
+    "en": "Built React Native full-stack architecture spanning web admin, server, and smart contracts. When store policies blocked native apps, pivoted to serverless API interim and rapid Web SSO solutions to maintain delivery."
   },
   "responsibilities": {
-    "zh": ["組建 APP 團隊", "技術架構", "API 設計", "全端開發", "上架與維護"],
-    "en": ["Built APP team", "Architecture", "API design", "Full-stack delivery", "Store releases"]
+    "zh": ["組建 APP 團隊", "技術架構", "API 設計", "全端開發", "上架與維護", "政策應對策略"],
+    "en": ["Built APP Team", "Technical Architecture", "API Design", "Full-stack Development", "Store Releases", "Policy Adaptation Strategy"]
   },
+  "architectureDecisions": [
+    "React Native Full-stack",
+    "Serverless API",
+    "Web SSO Pivot",
+    "Smart Contract Integration",
+    "Modular Backend"
+  ],
   "technologies": ["React Native", "Node.js", "Firebase", "AWS", "MongoDB", "Web3", "Smart Contracts", "Jest"],
-  "achievements": [
+  "impact": [
     {
       "status": "completed",
       "text": {
@@ -30,20 +37,41 @@
     {
       "status": "completed",
       "text": {
-        "zh": "Summit：Firestore Serverless API 讓 PM/QA 提前測試",
-        "en": "Summit: Firestore serverless API for early PM/QA testing"
+        "zh": "Summit：Firestore Serverless API 讓 PM/QA 提前測試，加速交付",
+        "en": "Summit: Firestore serverless API enabled early PM/QA testing, accelerating delivery"
       }
     },
     {
       "status": "completed",
       "text": {
-        "zh": "Hinspot：政策調整後快速改 React Native Web + SSO",
-        "en": "Hinspot: pivoted to RN Web + SSO when App Store policy changed"
+        "zh": "Hinspot：政策調整後快速改 React Native Web + SSO，維持產品可用性",
+        "en": "Hinspot: pivoted to RN Web + SSO when App Store policy changed, maintaining product availability"
       }
     }
   ],
+  "lessonsLearned": {
+    "zh": "在高度不確定的市場中，架構的彈性比技術選型的「正確性」更重要。能快速轉向的模組化設計，是應對政策與市場變化的關鍵。",
+    "en": "In highly uncertain markets, architectural flexibility matters more than technical \"correctness.\" Modular design that enables rapid pivots is key to adapting to policy and market changes."
+  },
   "note": {
     "zh": "此階段所有 App 現均已因平台政策或營運因素下架；經驗侧重架構、交付與政策應對。",
     "en": "All apps from this period are now delisted due to store policies or business reasons; experience focuses on architecture and delivery."
-  }
+  },
+  "problem": {
+    "zh": "加密貨幣錢包、OTC 交易、GameFi 需快速迭代並因應商店政策變化。",
+    "en": "Crypto wallets, OTC, and GameFi needed fast iteration amid changing store policies."
+  },
+  "solution": {
+    "zh": "React Native 全端架構，含 Web 後台、Server、Smart Contract；必要時以 Serverless 過渡與 Web SSO 應對政策。",
+    "en": "React Native full-stack with web admin, server, smart contracts; serverless interim and web SSO pivots."
+  },
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "必盈：三週雙平台上架，維護三年半",
+        "en": "Biying wallet: dual-platform launch in 3 weeks, 3.5 years maintenance"
+      }
+    }
+  ]
 }

@@ -54,6 +54,9 @@ function loadData(mode) {
     education: readJson(path.join(DATA, "education.json")),
     certificates: readJson(path.join(DATA, "certificates.json")),
     highlights: readJson(path.join(DATA, "highlights.json")),
+    philosophy: readJson(path.join(DATA, "philosophy.json")),
+    aiWorkflow: readJson(path.join(DATA, "ai-workflow.json")),
+    aiNative: readJson(path.join(DATA, "ai-native.json")),
     projects,
     stories,
   };

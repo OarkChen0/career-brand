@@ -10,20 +10,27 @@
     "website": "http://www.megaforce.com.tw",
     "showClientName": true
   },
-  "problem": {
-    "zh": "寵物醫療需支援連鎖經營的多層組織與後續中控、獸醫端產品。",
-    "en": "Pet healthcare needed multi-tier franchise architecture and future admin/vet products."
+  "businessChallenge": {
+    "zh": "寵物醫療連鎖需支援多層組織架構（中控總部、連鎖總部、院區），並為後續中控平台、獸醫端產品預留擴展空間。",
+    "en": "Pet healthcare franchise needed multi-tier organizational architecture (central HQ, franchise HQ, clinics) with room to expand into admin and vet-facing products."
   },
-  "solution": {
-    "zh": "規劃中控總部、連鎖總部、院區三層商業架構，並預先開發 App 及 Server。",
-    "en": "Planned three-tier business model and pre-built app/server foundation."
+  "technicalStrategy": {
+    "zh": "先定義三層商業架構與資料模型，再預先開發 App 與 Server 基礎設施。採用 Flutter 跨平台 + FastAPI/Express 後端，部署於 Cloud Run，確保各層可獨立演進。",
+    "en": "Defined three-tier business architecture and data model first, then pre-built app and server foundation. Flutter cross-platform + FastAPI/Express backend on Cloud Run, ensuring each tier can evolve independently."
   },
   "responsibilities": {
-    "zh": ["產品規劃", "商業架構設計", "App / Server 開發", "Cloud 部署規劃"],
-    "en": ["Product planning", "Business architecture", "App/server development", "Cloud deployment"]
+    "zh": ["產品規劃", "商業架構設計", "App / Server 開發", "Cloud 部署規劃", "技術領導"],
+    "en": ["Product Planning", "Business Architecture", "App / Server Development", "Cloud Deployment", "Technical Leadership"]
   },
+  "architectureDecisions": [
+    "Three-tier Business Model",
+    "API-first Design",
+    "Flutter Cross-platform",
+    "Cloud Run Deployment",
+    "Modular Backend"
+  ],
   "technologies": ["Flutter", "Swift", "Kotlin", "Express.js", "FastAPI", "Cloud Run", "React"],
-  "achievements": [
+  "impact": [
     {
       "status": "completed",
       "text": {
@@ -34,8 +41,36 @@
     {
       "status": "in_progress",
       "text": {
-        "zh": "App 及 Server 預先開發（Cloud Run；TestFlight / Play Console 內測）",
-        "en": "Pre-built app and server on Cloud Run; TestFlight / internal testing"
+        "zh": "App 及 Server 預先開發，支援未來多產品線擴展",
+        "en": "Pre-built app and server foundation enabling future product line expansion"
+      }
+    },
+    {
+      "status": "in_progress",
+      "text": {
+        "zh": "Cloud Run 部署，TestFlight / Play Console 內測進行中",
+        "en": "Cloud Run deployment; TestFlight / internal testing in progress"
+      }
+    }
+  ],
+  "lessonsLearned": {
+    "zh": "SaaS 產品的架構設計必須在第一天就考慮多租戶與多層組織，事後重構的成本遠高於前期規劃。",
+    "en": "SaaS architecture must consider multi-tenancy and multi-tier organization from day one — retrofitting costs far exceed upfront planning."
+  },
+  "problem": {
+    "zh": "寵物醫療需支援連鎖經營的多層組織與後續中控、獸醫端產品。",
+    "en": "Pet healthcare needed multi-tier franchise architecture and future admin/vet products."
+  },
+  "solution": {
+    "zh": "規劃中控總部、連鎖總部、院區三層商業架構，並預先開發 App 及 Server。",
+    "en": "Planned three-tier business model and pre-built app/server foundation."
+  },
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "從單一「寵物醫院」概念，規劃三層商業架構（中控總部／連鎖總部／院區）",
+        "en": "Planned three-tier architecture: central HQ, franchise HQ, clinics"
       }
     }
   ]

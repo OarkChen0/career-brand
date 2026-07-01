@@ -10,6 +10,7 @@
     "build:full": "node scripts/build.mjs --full",
     "validate": "node scripts/validate.mjs",
     "preview": "npm run build:public && node scripts/preview.mjs",
-    "preview:serve": "node scripts/preview.mjs"
+    "preview:serve": "node scripts/preview.mjs",
+    "preview:lan": "npm run build:public && node scripts/preview.mjs --lan"
   }
 }

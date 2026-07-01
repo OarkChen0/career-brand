@@ -6,6 +6,7 @@
 
 import http from "http";
 import net from "net";
+import os from "os";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -18,6 +19,18 @@ const args = process.argv.slice(2);
 const portIdx = args.indexOf("--port");
 const PREFERRED_PORT = portIdx >= 0 ? Number(args[portIdx + 1]) || 4173 : 4173;
 const NO_OPEN = args.includes("--no-open");
+const LAN = args.includes("--lan");
+const HOST = LAN ? "0.0.0.0" : "127.0.0.1";
+
+function getLanAddresses() {
+  const addrs = [];
+  for (const ifaces of Object.values(os.networkInterfaces())) {
+    for (const iface of ifaces ?? []) {
+      if (iface.family === "IPv4" && !iface.internal) addrs.push(iface.address);
+    }
+  }
+  return [...new Set(addrs)];
+}
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -108,7 +121,7 @@ function startServer(port) {
 
   return new Promise((resolve, reject) => {
     server.once("error", reject);
-    server.listen(port, "127.0.0.1", () => resolve(server));
+    server.listen(port, HOST, () => resolve(server));
   });
 }
 
@@ -133,5 +146,11 @@ if (port !== PREFERRED_PORT) {
 
 const server = await startServer(port);
 console.log(`\n  Preview: ${url}`);
+if (LAN) {
+  for (const ip of getLanAddresses()) {
+    console.log(`  LAN:     http://${ip}:${port}/`);
+  }
+  console.log("  同一 Wi‑Fi / 區域網內的裝置可用上方 LAN 網址開啟。");
+}
 console.log("  Press Ctrl+C to stop.\n");
 if (!NO_OPEN) openBrowser(url);

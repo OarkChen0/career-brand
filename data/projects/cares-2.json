@@ -10,27 +10,63 @@
     "website": "http://www.megaforce.com.tw",
     "showClientName": true
   },
+  "businessChallenge": {
+    "zh": "健康數據平台需在長時間區間查詢時維持效能，同時面臨嚴重的資安風險需要系統性修復。",
+    "en": "Health data platform needed to maintain performance for long-range queries while facing serious security risks requiring systematic remediation."
+  },
+  "technicalStrategy": {
+    "zh": "設計健康數據摘要資料模型，將長時間區間查詢轉為預聚合讀取。同步主導資安修復與 Flutter App 重構，採用分層架構隔離資料存取邏輯。",
+    "en": "Designed health data summary model converting long-range queries to pre-aggregated reads. Led security remediation and Flutter app refactoring with layered architecture isolating data access logic."
+  },
+  "responsibilities": {
+    "zh": ["資料模型設計", "App 開發維護", "資安議題處理", "重構協作", "技術領導"],
+    "en": ["Data Model Design", "App Development", "Security Remediation", "Refactoring Collaboration", "Technical Leadership"]
+  },
+  "architectureDecisions": [
+    "Data Summary Model",
+    "Pre-aggregation Strategy",
+    "Layered Architecture",
+    "Offline-first",
+    "Repository Pattern"
+  ],
+  "technologies": ["Flutter", "Firestore", "SQLite", "Express.js", "FastAPI"],
+  "impact": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "健康數據摘要模型，解決長時間區間讀取效能瓶頸",
+        "en": "Health data summary model resolving long-range query performance bottlenecks"
+      }
+    },
+    {
+      "status": "completed",
+      "metric": "168 → 12",
+      "text": {
+        "zh": "中／高風險資安項目由 168 項降至 12 項（縮減逾 90%）",
+        "en": "Reduced medium/high security risks from 168 to 12 (>90%)"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "改善系統可維護性，為後續功能擴展奠定基礎",
+        "en": "Improved maintainability, enabling future feature expansion"
+      }
+    }
+  ],
+  "lessonsLearned": {
+    "zh": "效能與資安問題往往源於早期的資料模型設計。在功能快速迭代時，仍需保留架構審查的節奏。",
+    "en": "Performance and security issues often stem from early data model design. Even during rapid feature iteration, architecture review cadence must be preserved."
+  },
   "problem": {
     "zh": "健康數據平台需在長時間區間查詢時維持效能，並處理資安風險。",
     "en": "Health data platform needed performant long-range queries and security remediation."
   },
   "solution": {
-    "zh": "設計健康數據摘要資料模型，協助重構並改善資安；Flutter App 開發維護。專案已結束。",
-    "en": "Designed health data summary model, led refactoring and security fixes; Flutter app delivery. Project concluded."
+    "zh": "設計健康數據摘要資料模型，協助重構並改善資安；Flutter App 開發維護。",
+    "en": "Designed health data summary model, led refactoring and security fixes; Flutter app delivery."
   },
-  "responsibilities": {
-    "zh": ["資料模型設計", "App 開發維護", "資安議題處理", "重構協作"],
-    "en": ["Data model design", "App development", "Security remediation", "Refactoring collaboration"]
-  },
-  "technologies": ["Flutter", "Firestore", "SQLite", "Express.js", "FastAPI"],
   "achievements": [
-    {
-      "status": "completed",
-      "text": {
-        "zh": "健康數據摘要模型，解決長時間區間讀取效能瓶頸",
-        "en": "Health data summary model resolving long-range query performance"
-      }
-    },
     {
       "status": "completed",
       "metric": "168 → 12",

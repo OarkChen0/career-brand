@@ -7,25 +7,32 @@
   "domains": ["enterprise", "mobile", "architecture"],
   "employer": { "zh": "昕力資訊", "en": "ThinkPower Information", "showClientName": false },
   "confidentiality": "public_anonymized",
-  "problem": {
-    "zh": "多家企業 in-house App 需依場域動態調整表單欄位，逐案重寫成本高。",
-    "en": "Multiple enterprise in-house apps needed dynamic forms without per-client rebuilds."
+  "businessChallenge": {
+    "zh": "多家企業 in-house App 需依場域動態調整表單欄位，逐案重寫表單邏輯的成本極高且難以維護。",
+    "en": "Multiple enterprise in-house apps needed dynamic form fields per domain. Per-client form rewrites were costly and unmaintainable."
   },
-  "solution": {
-    "zh": "以 MVVM 設計 JSON 驅動表單引擎；涵蓋保全、航空、健檢、電信等場域（不公開客戶與 App 名稱）。",
-    "en": "MVVM JSON-driven form engine for security, aviation, health checkup, telecom in-house apps (client names not disclosed)."
+  "technicalStrategy": {
+    "zh": "設計 JSON 驅動的動態表單引擎，以 MVVM 架構分離表單定義與 UI 渲染。涵蓋保全、航空、健檢、電信等場域，讓新客戶只需配置 JSON 而非重寫程式碼。",
+    "en": "Designed JSON-driven dynamic form engine with MVVM architecture separating form definitions from UI rendering. Covered security, aviation, health checkup, and telecom domains — new clients only need JSON config, not code rewrites."
   },
   "responsibilities": {
     "zh": ["SA 需求釐清", "SD 架構設計", "動態表單實作", "團隊帶領（峰值 7 人）", "客戶端 Xamarin 技術教育"],
-    "en": ["Requirements analysis", "Architecture design", "Dynamic form implementation", "Team lead (up to 7)", "Client-side Xamarin training"]
+    "en": ["Requirements Analysis", "Architecture Design", "Dynamic Form Implementation", "Team Lead (up to 7)", "Client-side Xamarin Training"]
   },
+  "architectureDecisions": [
+    "MVVM",
+    "JSON-driven Forms",
+    "Dynamic Form Engine",
+    "Repository Pattern",
+    "Modular Architecture"
+  ],
   "technologies": ["Xamarin", "iOS", "Android", "MVVM", "SQLite"],
-  "achievements": [
+  "impact": [
     {
       "status": "completed",
       "text": {
-        "zh": "某保全業 in-house App：MVVM 動態表單架構，帶領 7 人、6 個月",
-        "en": "Security industry in-house app: MVVM dynamic forms, led 7 engineers, 6 months"
+        "zh": "某保全業 in-house App：MVVM 動態表單架構，帶領 7 人、6 個月交付",
+        "en": "Security industry in-house app: MVVM dynamic forms, led 7 engineers, 6-month delivery"
       }
     },
     {
@@ -38,8 +45,29 @@
     {
       "status": "completed",
       "text": {
-        "zh": "某健檢／電信／金融等 in-house 專案：動態表單、硬體串接、PM/SA 角色",
-        "en": "Health, telecom, banking in-house projects: dynamic forms, hardware integration, PM/SA roles"
+        "zh": "降低新客戶 onboarding 成本，表單配置取代程式碼重寫",
+        "en": "Reduced new client onboarding cost — form configuration replaced code rewrites"
+      }
+    }
+  ],
+  "lessonsLearned": {
+    "zh": "可重用的架構模式（如動態表單引擎）是企業 in-house 開發的核心競爭力。一次設計、多次複用的投資報酬率遠高於逐案客製。",
+    "en": "Reusable architecture patterns (like dynamic form engines) are core competitive advantage in enterprise in-house development. Design once, reuse many times — ROI far exceeds per-project customization."
+  },
+  "problem": {
+    "zh": "多家企業 in-house App 需依場域動態調整表單欄位，逐案重寫成本高。",
+    "en": "Multiple enterprise in-house apps needed dynamic forms without per-client rebuilds."
+  },
+  "solution": {
+    "zh": "以 MVVM 設計 JSON 驅動表單引擎；涵蓋保全、航空、健檢、電信等場域。",
+    "en": "MVVM JSON-driven form engine for security, aviation, health checkup, telecom in-house apps."
+  },
+  "achievements": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "某保全業 in-house App：MVVM 動態表單架構，帶領 7 人、6 個月",
+        "en": "Security industry in-house app: MVVM dynamic forms, led 7 engineers, 6 months"
       }
     }
   ]

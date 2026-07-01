@@ -1,8 +1,12 @@
 {
   "name": { "zh": "陳永政", "en": "Yong-Zheng Chen" },
   "headline": {
-    "zh": "Senior Product Engineer · Mobile × Backend × AI Integration",
-    "en": "Senior Product Engineer · Mobile × Backend × AI Integration"
+    "zh": "Senior Product Engineer · Architecture × Product × AI-native Development",
+    "en": "Senior Product Engineer · Architecture × Product × AI-native Development"
+  },
+  "tagline": {
+    "zh": "Building Products Where Engineers and AI Collaborate.",
+    "en": "Building Products Where Engineers and AI Collaborate."
   },
   "headlineAlt": {
     "zh": ["Technical Lead", "Solution Architect", "Engineering Manager"],
@@ -17,13 +21,19 @@
   },
   "summary": {
     "zh": [
-      "資深 Product Engineer，10 年以上企業軟體經驗。從 Mobile 工程師成長為 Technical Lead，主導金融、電信、航空、保全、健康、FinTech、Blockchain 等領域之產品規劃、架構設計與團隊帶領。",
-      "擅長將商業需求轉化為可落地的系統架構：動態表單 MVVM、REST API、跨平台 App、後端整合及 AI 應用。目前於 Megaforce（MegAi）擔任經理，帶領 4–6 人團隊，負責 PetCaresHub、地端 AI 會議助理等產品。"
+      "我打造的是產品，而不只是應用程式。",
+      "過去十年，我將商業需求轉化為可上線的系統，橫跨 Healthcare、FinTech、Blockchain、IoT、AI 與 Enterprise Mobile 等領域。",
+      "如今，我專注於設計讓工程師與 AI 高效協作的軟體架構——在加速交付的同時，維持工程品質與可維護性。"
     ],
     "en": [
-      "Senior Product Engineer with 10+ years building enterprise software. Progressed from mobile engineer to technical lead, driving product planning, architecture, and team leadership across banking, telecom, aviation, security, healthcare, fintech, and blockchain.",
-      "Strong at turning business requirements into shippable architecture: dynamic-form MVVM, REST APIs, cross-platform apps, backend integration, and AI applications. Currently Engineering Manager at Megaforce (MegAi), leading 4–6 engineers on PetCaresHub and an edge AI meeting assistant."
+      "I build products, not just applications.",
+      "Over the past decade, I have transformed business requirements into production-ready systems across Healthcare, FinTech, Blockchain, IoT, AI, and Enterprise Mobile.",
+      "Today, I focus on designing software architectures where engineers and AI collaborate efficiently to accelerate delivery while maintaining engineering quality."
     ]
+  },
+  "specializations": {
+    "zh": ["Product Architecture", "Technical Leadership", "AI-assisted Development Workflow", "Mobile", "Backend", "System Design"],
+    "en": ["Product Architecture", "Technical Leadership", "AI-assisted Development Workflow", "Mobile", "Backend", "System Design"]
   },
   "languages": [
     { "name": { "zh": "中文", "en": "Mandarin" }, "level": { "zh": "母語", "en": "Native" } },

@@ -1,0 +1,165 @@
+{
+  "title": { "zh": "AI-native 開發", "en": "AI-native Development" },
+  "subtitle": {
+    "zh": "我不使用 AI 取代工程，而是用 AI 放大工程能力。",
+    "en": "I do not use AI to replace engineering. I use AI to amplify engineering."
+  },
+  "sections": [
+    {
+      "id": "why-ai",
+      "title": { "zh": "AI 如何改變軟體工程", "en": "Why AI Changes Software Engineering" },
+      "content": {
+        "zh": [
+          "AI 大幅降低了實作層的成本，但並未降低架構設計與工程判斷的價值。",
+          "當程式碼產出速度提升 10 倍，瓶頸從「寫程式」轉移到「寫對程式」——需求釐清、架構設計、品質審查變得更加關鍵。",
+          "AI-native 開發不是讓 AI 寫完整個系統，而是在明確的工程框架下，讓 AI 處理可預測的重複工作，工程師專注於決策與品質。"
+        ],
+        "en": [
+          "AI dramatically lowers the cost of implementation, but does not reduce the value of architecture design and engineering judgement.",
+          "When code output speeds up 10×, the bottleneck shifts from \"writing code\" to \"writing the right code\" — requirements, architecture, and quality review become more critical.",
+          "AI-native development is not letting AI build entire systems. It is using AI for predictable, repetitive work within a clear engineering framework, while engineers focus on decisions and quality."
+        ]
+      }
+    },
+    {
+      "id": "workflow",
+      "title": { "zh": "我的開發工作流", "en": "My Development Workflow" },
+      "diagram": {
+        "zh": ["需求分析", "架構設計", "技術規格", "AI 輔助實作", "審查與重構", "測試與交付"],
+        "en": ["Requirement Analysis", "Architecture Design", "Technical Specification", "AI-assisted Implementation", "Review & Refactoring", "Testing & Delivery"]
+      },
+      "content": {
+        "zh": [
+          "每個專案都遵循「架構先行」原則：在寫第一行程式碼之前，模組邊界、API 契約與資料流必須已定義。",
+          "AI 只在規格明確的階段介入，用於加速樣板程式碼、測試骨架與文件產出。"
+        ],
+        "en": [
+          "Every project follows an \"architecture first\" principle: module boundaries, API contracts, and data flow must be defined before the first line of code.",
+          "AI intervenes only when specs are clear — accelerating boilerplate, test scaffolding, and documentation."
+        ]
+      }
+    },
+    {
+      "id": "architecture-first",
+      "title": { "zh": "架構優於編碼", "en": "Architecture before Coding" },
+      "content": {
+        "zh": [
+          "我會先畫出系統模組圖、定義 API 介面、撰寫技術規格文件，再開始實作。",
+          "這確保 AI 產出的程式碼有明確的歸屬與約束，不會偏離整體設計。",
+          "對 Junior 工程師而言，清晰的架構也是最好的 onboarding 材料。"
+        ],
+        "en": [
+          "I start with system module diagrams, API interface definitions, and technical specification documents before implementation.",
+          "This ensures AI-generated code has clear ownership and constraints, staying aligned with the overall design.",
+          "For junior engineers, a clear architecture is also the best onboarding material."
+        ]
+      }
+    },
+    {
+      "id": "chatgpt",
+      "title": { "zh": "我如何使用 ChatGPT", "en": "How I Use ChatGPT" },
+      "content": {
+        "zh": [
+          "需求探索與方案比較：在架構設計階段，用於評估技術選型與權衡分析。",
+          "技術規格撰寫：產出 API 文件草稿、資料模型設計、錯誤處理策略。",
+          "知識補充：快速理解新技術棧的可行性與限制。",
+          "不直接用於：產出未經審查的生產程式碼。"
+        ],
+        "en": [
+          "Requirements exploration and trade-off analysis during architecture design.",
+          "Technical specification drafting: API docs, data models, error handling strategies.",
+          "Knowledge supplementation: quickly understanding feasibility and constraints of new tech stacks.",
+          "Not used for: producing unreviewed production code."
+        ]
+      }
+    },
+    {
+      "id": "cursor",
+      "title": { "zh": "我如何使用 Cursor", "en": "How I Use Cursor" },
+      "content": {
+        "zh": [
+          "在已定義的架構與規格下，加速模組實作、測試撰寫與重構。",
+          "透過 .cursorrules 與專案上下文，引導 AI 遵循既定的程式碼風格與架構模式。",
+          "批次處理重複性工作：CRUD 端點、資料轉換層、單元測試骨架。",
+          "每次 AI 產出都經過人工審查，確認符合架構原則後才合併。"
+        ],
+        "en": [
+          "Accelerate module implementation, test writing, and refactoring within defined architecture and specs.",
+          "Use .cursorrules and project context to guide AI toward established code style and architecture patterns.",
+          "Batch repetitive work: CRUD endpoints, data transformation layers, unit test scaffolding.",
+          "Every AI output is human-reviewed and merged only after confirming alignment with architecture principles."
+        ]
+      }
+    },
+    {
+      "id": "review",
+      "title": { "zh": "我如何審查 AI 產出的程式碼", "en": "How I Review AI-generated Code" },
+      "content": {
+        "zh": [
+          "架構一致性：是否符合已定義的模組邊界與 API 契約？",
+          "錯誤處理：邊界條件、例外路徑是否完整？",
+          "安全性：是否有硬編碼憑證、未驗證輸入、不當的權限控制？",
+          "可維護性：命名、抽象層次、依賴方向是否合理？",
+          "可測試性：是否易於撰寫單元測試與整合測試？"
+        ],
+        "en": [
+          "Architecture consistency: does it align with defined module boundaries and API contracts?",
+          "Error handling: are edge cases and exception paths complete?",
+          "Security: hardcoded credentials, unvalidated input, improper access control?",
+          "Maintainability: naming, abstraction levels, dependency direction?",
+          "Testability: easy to write unit and integration tests?"
+        ]
+      }
+    },
+    {
+      "id": "onboarding",
+      "title": { "zh": "AI 如何改善團隊 Onboarding", "en": "How AI Improves Onboarding" },
+      "content": {
+        "zh": [
+          "清晰的架構文件 + AI 輔助的程式碼範例，讓 Junior 工程師能快速理解模組職責。",
+          "可重用的 API 模組與 OpenAPI 規格，降低「從零開始」的學習曲線。",
+          "AI 會議助理專案即是實例：架構與 scaffold 定義完成後，Junior 工程師即可接手功能實作。"
+        ],
+        "en": [
+          "Clear architecture docs + AI-assisted code examples help juniors quickly understand module responsibilities.",
+          "Reusable API modules and OpenAPI specs reduce the \"start from scratch\" learning curve.",
+          "The AI Meeting Assistant project is a case in point: once architecture and scaffold were defined, juniors could immediately take over feature implementation."
+        ]
+      }
+    },
+    {
+      "id": "principles",
+      "title": { "zh": "工程原則", "en": "Engineering Principles" },
+      "items": [
+        {
+          "title": { "zh": "人主導決策，AI 輔助執行", "en": "Humans Decide, AI Executes" },
+          "description": {
+            "zh": "架構、技術選型、品質標準由工程師定義；AI 在框架內加速實作。",
+            "en": "Architecture, technology choices, and quality standards are defined by engineers; AI accelerates within that framework."
+          }
+        },
+        {
+          "title": { "zh": "規格先行，程式碼隨後", "en": "Specs First, Code Second" },
+          "description": {
+            "zh": "沒有明確規格，就不啟動 AI 輔助實作。",
+            "en": "No clear spec, no AI-assisted implementation."
+          }
+        },
+        {
+          "title": { "zh": "審查不可省略", "en": "Review Is Non-negotiable" },
+          "description": {
+            "zh": "AI 產出的每一行程式碼都經過工程師審查。",
+            "en": "Every line of AI-generated code is reviewed by an engineer."
+          }
+        },
+        {
+          "title": { "zh": "可維護性優於交付速度", "en": "Maintainability Over Delivery Speed" },
+          "description": {
+            "zh": "快速產出但難以維護的程式碼，不是真正的加速。",
+            "en": "Fast output that is hard to maintain is not real acceleration."
+          }
+        }
+      ]
+    }
+  ]
+}

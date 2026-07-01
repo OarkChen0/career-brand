@@ -1,0 +1,76 @@
+{
+  "title": { "zh": "AI 工程工作流", "en": "AI Engineering Workflow" },
+  "subtitle": {
+    "zh": "我如何將 AI 整合進真實的軟體開發流程。",
+    "en": "How I integrate AI into real software development."
+  },
+  "note": {
+    "zh": "AI 協助實作；架構、決策與品質仍由工程師負責。",
+    "en": "AI assists implementation; architecture, decisions, and quality remain human responsibilities."
+  },
+  "steps": [
+    {
+      "title": { "zh": "商業需求", "en": "Business Requirement" },
+      "description": {
+        "zh": "從業務目標與使用者場景出發，釐清真正的問題。",
+        "en": "Start from business goals and user scenarios to clarify the real problem."
+      }
+    },
+    {
+      "title": { "zh": "需求分析", "en": "Requirement Analysis" },
+      "description": {
+        "zh": "拆解功能邊界、非功能需求與技術約束。",
+        "en": "Break down functional scope, non-functional requirements, and technical constraints."
+      }
+    },
+    {
+      "title": { "zh": "架構設計", "en": "Architecture Design" },
+      "description": {
+        "zh": "定義模組邊界、資料流與技術選型——這一步由人主導。",
+        "en": "Define module boundaries, data flow, and technology choices — human-led."
+      }
+    },
+    {
+      "title": { "zh": "技術規格", "en": "Technical Specification" },
+      "description": {
+        "zh": "將架構轉為 API 契約、介面定義與實作指引。",
+        "en": "Translate architecture into API contracts, interfaces, and implementation guides."
+      }
+    },
+    {
+      "title": { "zh": "AI 輔助實作", "en": "AI-assisted Implementation" },
+      "description": {
+        "zh": "在明確規格下，以 AI 加速重複性程式碼與樣板產出。",
+        "en": "With clear specs, use AI to accelerate boilerplate and repetitive code."
+      }
+    },
+    {
+      "title": { "zh": "技術審查", "en": "Technical Review" },
+      "description": {
+        "zh": "審查 AI 產出是否符合架構原則與程式品質標準。",
+        "en": "Review AI output against architecture principles and code quality standards."
+      }
+    },
+    {
+      "title": { "zh": "重構", "en": "Refactoring" },
+      "description": {
+        "zh": "消除技術債、統一模組介面、提升可測試性。",
+        "en": "Eliminate tech debt, unify module interfaces, improve testability."
+      }
+    },
+    {
+      "title": { "zh": "測試", "en": "Testing" },
+      "description": {
+        "zh": "驗證核心路徑、邊界條件與整合行為。",
+        "en": "Verify core paths, edge cases, and integration behavior."
+      }
+    },
+    {
+      "title": { "zh": "交付", "en": "Delivery" },
+      "description": {
+        "zh": "部署、監控並將知識傳承給團隊。",
+        "en": "Deploy, monitor, and transfer knowledge to the team."
+      }
+    }
+  ]
+}

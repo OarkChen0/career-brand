@@ -10,32 +10,75 @@
     "website": "http://www.megaforce.com.tw",
     "showClientName": true
   },
-  "problem": {
-    "zh": "需在地端硬體上提供 AI 即時轉錄與會議摘要，且讓 Junior 工程師能快速接手開發。",
-    "en": "Need edge-deployable AI transcription/summaries with a framework juniors can build on."
+  "businessChallenge": {
+    "zh": "公司計畫打造地端 AI 會議助理，具備語音轉錄與會議摘要功能。方案需支援未來部署於邊緣硬體，同時讓 Junior 工程師能維護與擴展。",
+    "en": "The company planned to build an on-premise AI meeting assistant capable of speech transcription and meeting summarization. The solution had to support future deployment on edge hardware while remaining maintainable by junior engineers."
   },
-  "solution": {
-    "zh": "已完成框架規劃；定義 Python Server + Web 地端架構與 API 模組範例，開發進行中。",
-    "en": "Framework planning complete; Python server + web edge architecture and API modules defined; development in progress."
+  "technicalStrategy": {
+    "zh": "未立即動手開發功能，而是先評估 Whisper.cpp、本地 LLM 部署、後端框架與部署選項。驗證可行性後，設計模組化的 FastAPI + React 架構，搭配可重用的 API 模組。",
+    "en": "Instead of immediately building features, I first evaluated Whisper.cpp, local LLM deployment, backend frameworks, and deployment options. After validating feasibility, I designed a modular FastAPI + React architecture with reusable API modules."
   },
   "responsibilities": {
-    "zh": ["架構設計", "框架定義", "API 模組範例", "技術傳承"],
-    "en": ["Architecture design", "Framework definition", "Reference API modules", "Engineering enablement"]
+    "zh": ["技術評估", "架構設計", "後端框架選型", "API 規格撰寫", "開發工作流定義", "Mentoring 策略"],
+    "en": ["Technology Evaluation", "Architecture Design", "Backend Framework", "API Specification", "Development Workflow", "Mentoring Strategy"]
   },
-  "technologies": ["Python", "FastAPI", "Edge Deployment", "Web"],
+  "architectureDecisions": [
+    "FastAPI",
+    "OpenAPI",
+    "Modular Backend",
+    "React Frontend",
+    "Edge Deployment Ready",
+    "AI-assisted Development Workflow"
+  ],
+  "technologies": ["Python", "FastAPI", "React", "Whisper.cpp", "Edge Deployment"],
+  "impact": [
+    {
+      "status": "completed",
+      "text": {
+        "zh": "單次工程迭代即完成架構建立",
+        "en": "Architecture established in a single engineering iteration"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "可重用的專案 scaffold 已就緒",
+        "en": "Reusable project scaffold prepared"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "OpenAPI 規格已整合",
+        "en": "OpenAPI integrated"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "開發環境已驗證，Junior 工程師可立即接手功能實作",
+        "en": "Development environment verified; junior engineers could immediately continue feature implementation"
+      }
+    }
+  ],
+  "lessonsLearned": {
+    "zh": "AI 能大幅加速軟體交付，但前提是架構與職責在實作開始前就已明確定義。",
+    "en": "AI dramatically accelerates software delivery when architecture and responsibilities are clearly defined before implementation."
+  },
+  "problem": {
+    "zh": "公司計畫打造地端 AI 會議助理，具備語音轉錄與會議摘要功能。方案需支援未來部署於邊緣硬體，同時讓 Junior 工程師能維護與擴展。",
+    "en": "The company planned to build an on-premise AI meeting assistant capable of speech transcription and meeting summarization. The solution had to support future deployment on edge hardware while remaining maintainable by junior engineers."
+  },
+  "solution": {
+    "zh": "評估技術可行性後，設計模組化 FastAPI + React 架構，搭配可重用 API 模組與 OpenAPI 規格。",
+    "en": "After feasibility validation, designed modular FastAPI + React architecture with reusable API modules and OpenAPI specs."
+  },
   "achievements": [
     {
       "status": "completed",
       "text": {
-        "zh": "框架與架構規劃完成，定義可部署於地端電路板的 Python Server + Web 方案",
-        "en": "Completed framework/architecture planning for edge-deployable Python server + web"
-      }
-    },
-    {
-      "status": "in_progress",
-      "text": {
-        "zh": "依規劃進行開發，供 Junior 工程師接手 UI 與細部邏輯",
-        "en": "Implementation in progress for juniors to build UI and business logic"
+        "zh": "單次工程迭代即完成架構建立，Junior 工程師可立即接手功能實作",
+        "en": "Architecture established in one iteration; juniors could immediately continue feature implementation"
       }
     }
   ]

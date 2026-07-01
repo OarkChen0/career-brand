@@ -1,0 +1,33 @@
+{
+  "title": { "zh": "工程哲學", "en": "Engineering Philosophy" },
+  "items": [
+    {
+      "title": { "zh": "架構優先", "en": "Architecture First" },
+      "description": {
+        "zh": "可擴展的架構應在實作之前就已存在。",
+        "en": "A scalable architecture should exist before implementation."
+      }
+    },
+    {
+      "title": { "zh": "商業驅動", "en": "Business Driven" },
+      "description": {
+        "zh": "技術服務商業目標，而非相反。",
+        "en": "Technology serves business goals rather than the opposite."
+      }
+    },
+    {
+      "title": { "zh": "AI 作為加速器", "en": "AI as an Accelerator" },
+      "description": {
+        "zh": "AI 加速實作，但工程判斷力仍是根基。",
+        "en": "AI accelerates implementation, but engineering judgement remains the foundation."
+      }
+    },
+    {
+      "title": { "zh": "品質優於速度", "en": "Quality over Speed" },
+      "description": {
+        "zh": "快速交付只有在架構仍可維護時才有意義。",
+        "en": "Fast delivery is meaningful only when the architecture remains maintainable."
+      }
+    }
+  ]
+}
