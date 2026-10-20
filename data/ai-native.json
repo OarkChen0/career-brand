@@ -118,12 +118,12 @@
         "zh": [
           "清晰的架構文件 + AI 輔助的程式碼範例，讓 Junior 工程師能快速理解模組職責。",
           "可重用的 API 模組與 OpenAPI 規格，降低「從零開始」的學習曲線。",
-          "AI 會議助理專案即是實例：架構與 scaffold 定義完成後，Junior 工程師即可接手功能實作。"
+          "地端 AI 會議助理即是實例：架構與 scaffold 定義完成後，Junior 工程師即可接手功能實作。該專案現已結束，此段描述的是當時的工程方法。"
         ],
         "en": [
           "Clear architecture docs + AI-assisted code examples help juniors quickly understand module responsibilities.",
           "Reusable API modules and OpenAPI specs reduce the \"start from scratch\" learning curve.",
-          "The AI Meeting Assistant project is a case in point: once architecture and scaffold were defined, juniors could immediately take over feature implementation."
+          "The edge AI meeting assistant is a case in point: once architecture and scaffold were defined, juniors could take over feature implementation. That project has since concluded; this describes the engineering method used at the time."
         ]
       }
     },

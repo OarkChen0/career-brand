@@ -3,7 +3,7 @@
   "name": { "zh": "地端 AI 會議助理", "en": "Edge AI Meeting Assistant" },
   "type": "work",
   "featured": true,
-  "status": "in_progress",
+  "status": "discontinued",
   "domains": ["ai", "edge", "architecture"],
   "employer": {
     "name": { "zh": "Megaforce（MegAi）", "en": "Megaforce (MegAi)" },
@@ -64,6 +64,10 @@
   "lessonsLearned": {
     "zh": "AI 能大幅加速軟體交付，但前提是架構與職責在實作開始前就已明確定義。",
     "en": "AI dramatically accelerates software delivery when architecture and responsibilities are clearly defined before implementation."
+  },
+  "note": {
+    "zh": "此專案已結束。對外呈現的是該階段已交付的架構、scaffold 與開發流程，而非仍在進行的產品。",
+    "en": "This project has concluded. The page reflects the architecture, scaffold, and development workflow delivered in that phase."
   },
   "problem": {
     "zh": "公司計畫打造地端 AI 會議助理，具備語音轉錄與會議摘要功能。方案需支援未來部署於邊緣硬體，同時讓 Junior 工程師能維護與擴展。",

@@ -228,8 +228,8 @@
           ]
         },
         "result": {
-          "zh": "框架規劃完成，開發進行中；Junior 已能依範例獨立開發子模組。",
-          "en": "Framework planning complete; development in progress; juniors can independently build sub-modules from examples."
+          "zh": "框架與 scaffold 已交付，Junior 能依範例獨立開發子模組。專案現已結束。",
+          "en": "Framework and scaffold were delivered; juniors could build sub-modules from the examples. The project has since concluded."
         }
       }
     },
@@ -262,18 +262,18 @@
         "action": {
           "zh": [
             "與業務對齊三層權限、資料隔離與營運流程",
-            "選型 Flutter + Express/FastAPI + Cloud Run，支援跨平台與彈性部署",
-            "App 及 Server 預先開發，TestFlight / Play Console 內測"
+            "選型原生 iOS／Android、React 醫院端與 Express + Cloud Run，臨床功能用階段閘控",
+            "飼主 App 初版先上架；預約、候診、病歷與開診工作區先在醫院端完成"
           ],
           "en": [
             "Aligned with business on three-tier permissions, data isolation, and ops flows",
-            "Chose Flutter + Express/FastAPI + Cloud Run for cross-platform and flexible deployment",
-            "Pre-built app and server; TestFlight / Play Console internal testing"
+            "Chose native iOS/Android, a React hospital client, and Express on Cloud Run, with clinical work behind a phase gate",
+            "Shipped the first owner-app releases; appointments, queues, records, and the consultation workspace landed on the hospital side first"
           ]
         },
         "result": {
-          "zh": "三層商業架構定案，App 與 Server 基礎建設就緒，後續可擴充獸醫端與中控產品。專案進行中。",
-          "en": "Three-tier model approved; app and server foundation ready for vet and admin products. In progress."
+          "zh": "三層架構已進入實作。飼主 App 的 iOS／Android 初版已上架；獸醫端初版接近完成但尚未面市，與獸醫端互動的 App 功能留到預計面市時再送審。",
+          "en": "The three-tier model is now in implementation. The owner app's first iOS and Android releases are live; the vet-side first version is nearly complete but not yet launched, and app features that depend on it wait for the planned market launch before store review."
         }
       }
     },

@@ -11,66 +11,74 @@
     "showClientName": true
   },
   "businessChallenge": {
-    "zh": "寵物醫療連鎖需支援多層組織架構（中控總部、連鎖總部、院區），並為後續中控平台、獸醫端產品預留擴展空間。",
-    "en": "Pet healthcare franchise needed multi-tier organizational architecture (central HQ, franchise HQ, clinics) with room to expand into admin and vet-facing products."
+    "zh": "寵物醫療連鎖需要同時服務飼主、院區與總部：飼主要先有可用的 App，醫院與獸醫端則要能處理預約、候診與病歷。兩邊的交互相依，但不能等獸醫端面市才讓飼主 App 上架。",
+    "en": "A pet-care franchise has to serve owners, clinics, and headquarters at once. Owners need a usable app first, while the hospital and vet side must handle appointments, queues, and medical records. The two sides depend on each other, but the owner app cannot wait for the vet product to reach the market."
   },
   "technicalStrategy": {
-    "zh": "先定義三層商業架構與資料模型，再預先開發 App 與 Server 基礎設施。採用 Flutter 跨平台 + FastAPI/Express 後端，部署於 Cloud Run，確保各層可獨立演進。",
-    "en": "Defined three-tier business architecture and data model first, then pre-built app and server foundation. Flutter cross-platform + FastAPI/Express backend on Cloud Run, ensuring each tier can evolve independently."
+    "zh": "先定下中控總部、連鎖總部、院區的三層模型，再拆成飼主 App、醫院／獸醫 Web 與 Express API。臨床流程用階段閘控推進：預約候診、病歷與開診工作區先在醫院端完成，飼主 App 與獸醫端的互動功能留到預計面市時再送審。即時候診走 WebSocket，服務部署在 Cloud Run。",
+    "en": "Defined a three-tier model — central HQ, franchise HQ, and clinics — then split delivery into the owner app, hospital/vet web, and an Express API. Clinical workflows advance behind a phase gate: appointments, queues, records, and the consultation workspace land on the hospital side first. Owner-app features that depend on the vet side wait for the planned market launch before store review. Live queue updates use WebSocket; the service runs on Cloud Run."
   },
   "responsibilities": {
-    "zh": ["產品規劃", "商業架構設計", "App / Server 開發", "Cloud 部署規劃", "技術領導"],
-    "en": ["Product Planning", "Business Architecture", "App / Server Development", "Cloud Deployment", "Technical Leadership"]
+    "zh": ["產品規劃", "商業架構設計", "階段交付規劃", "API 設計", "飼主 App 與醫院端對齊", "技術領導"],
+    "en": ["Product Planning", "Business Architecture", "Phased Delivery Planning", "API Design", "Owner App and Hospital Alignment", "Technical Leadership"]
   },
   "architectureDecisions": [
     "Three-tier Business Model",
+    "Phase-gated Release",
     "API-first Design",
-    "Flutter Cross-platform",
-    "Cloud Run Deployment",
-    "Modular Backend"
+    "Native iOS / Android",
+    "WebSocket Queue",
+    "Cloud Run Deployment"
   ],
-  "technologies": ["Flutter", "Swift", "Kotlin", "Express.js", "FastAPI", "Cloud Run", "React"],
+  "technologies": ["Swift", "Kotlin", "React", "Express.js", "WebSocket", "Cloud Run", "Firebase"],
   "impact": [
     {
       "status": "completed",
       "text": {
         "zh": "從單一「寵物醫院」概念，規劃三層商業架構（中控總部／連鎖總部／院區）",
-        "en": "Planned three-tier architecture: central HQ, franchise HQ, clinics"
+        "en": "Planned a three-tier architecture: central HQ, franchise HQ, and clinics"
+      }
+    },
+    {
+      "status": "completed",
+      "text": {
+        "zh": "飼主 App 的 iOS／Android 初版已上架；與獸醫端互動的功能留到預計面市時再送審",
+        "en": "Shipped the first owner-app releases on iOS and Android; vet-interaction features stay out of store review until the planned market launch"
       }
     },
     {
       "status": "in_progress",
       "text": {
-        "zh": "App 及 Server 預先開發，支援未來多產品線擴展",
-        "en": "Pre-built app and server foundation enabling future product line expansion"
+        "zh": "獸醫端初版接近完成，已涵蓋預約掛號、候診叫號、會員與病歷、預檢量測和開診工作區，尚未面市",
+        "en": "The first vet-side release is nearly complete — appointments, queue calling, members and records, pre-exam measurements, and the consultation workspace — and is not yet on the market"
       }
     },
     {
-      "status": "in_progress",
+      "status": "completed",
       "text": {
-        "zh": "Cloud Run 部署，TestFlight / Play Console 內測進行中",
-        "en": "Cloud Run deployment; TestFlight / internal testing in progress"
+        "zh": "用階段閘控把臨床功能留在醫院端先做完，避免飼主 App 為了尚未就緒的跨端流程提前送審",
+        "en": "Used phase gates so clinical features could finish on the hospital side first, instead of sending the owner app to review for a cross-system flow that was not ready"
       }
     }
   ],
   "lessonsLearned": {
-    "zh": "SaaS 產品的架構設計必須在第一天就考慮多租戶與多層組織，事後重構的成本遠高於前期規劃。",
-    "en": "SaaS architecture must consider multi-tenancy and multi-tier organization from day one — retrofitting costs far exceed upfront planning."
+    "zh": "連鎖產品要在第一天就定好多層組織。飼主 App 與獸醫端雖然互相依賴，送審節奏仍應拆開：初版先上架，跨端功能等獸醫端準備面市再送審。",
+    "en": "A franchise product needs its organizational tiers defined on day one. The owner app and the vet side depend on each other, but their release cadence should not: ship the first app version, and submit the cross-system features only when the vet side is ready for market."
   },
   "problem": {
-    "zh": "寵物醫療需支援連鎖經營的多層組織與後續中控、獸醫端產品。",
-    "en": "Pet healthcare needed multi-tier franchise architecture and future admin/vet products."
+    "zh": "寵物醫療連鎖需同時支援飼主 App 與醫院／獸醫端，且兩邊不能綁成同一次上架。",
+    "en": "Pet healthcare needed an owner app and a hospital/vet side that could ship on different release cadences."
   },
   "solution": {
-    "zh": "規劃中控總部、連鎖總部、院區三層商業架構，並預先開發 App 及 Server。",
-    "en": "Planned three-tier business model and pre-built app/server foundation."
+    "zh": "三層商業架構加上階段閘控：飼主 App 初版先上架，獸醫端初版在醫院內完成後再面市。",
+    "en": "Three-tier architecture with a phase gate: owner apps shipped first, vet-side first release finishes in-hospital before market launch."
   },
   "achievements": [
     {
       "status": "completed",
       "text": {
-        "zh": "從單一「寵物醫院」概念，規劃三層商業架構（中控總部／連鎖總部／院區）",
-        "en": "Planned three-tier architecture: central HQ, franchise HQ, clinics"
+        "zh": "飼主 App iOS／Android 初版上架；獸醫端初版接近完成、尚未面市",
+        "en": "Owner apps live on iOS and Android as first releases; vet-side first version nearly complete and not yet launched"
       }
     }
   ]
